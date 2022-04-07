@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MapContainer() {
+function MapContainer({cats}) {
   return (
     <div>MapContainer</div>
   )

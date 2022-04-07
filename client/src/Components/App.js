@@ -1,44 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { Routes ,Route } from 'react-router-dom';
-import '../App.css';
+import { Route, Switch } from 'react-router-dom';
+import '../AppStyle.css';
 import Header from './Header';
 import Login from './Login';
 import Signup from './Signup';
 import MapContainer from './MapContainer';
 import CatContainer from './CatContainer';
+import CatsAll from './CatsAll';
+import CatsSingle from './CatsSingle';
+import NewCatForm from './NewCatForm';
+import EditCatForm from './EditCatForm';
+import FilterCats from './FilterCats';
+
 
 function App() {
+  const [catsArray, setCatsArray] = useState([]);
+
+  useEffect(()=>{
+    fetch("/cats")
+    .then(resp => resp.json())
+    .then(setCatsArray)
+  }, [])
+
+
   return (
     <div className="App">
       <Header />
-      <Routes>
+      <CatContainer catsArray={catsArray}/>
 
-      <Route 
-        exact path="/" 
-        element={<MapContainer />} 
-      />
+      {/* <Switch>
+        <Route path="/signup">
+          <Signup />
+        </Route>
 
-      <Route 
-        path="signup" 
-        element={<Signup />} 
-      />
+        <Route path="/login">
+          <Login />
+        </Route>
 
-      <Route 
-        path="login" 
-        element={<Login />} 
-      />
-
-      <Route 
-        path="map" 
-        element={<MapContainer />} 
-      />
-      
-      <Route 
-        path="all-cats" 
-        element={<CatContainer />} 
-      />
-
-      </Routes>
+        <Route path="/cats">
+          <CatContainer catsArray={catsArray}/>
+        </Route>
+      </Switch> */}
     </div>
   );
 }
