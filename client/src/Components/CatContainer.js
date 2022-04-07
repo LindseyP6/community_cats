@@ -1,32 +1,26 @@
 import React from 'react'
-import CatsAll from './CatsAll';
-import CatsSingle from './CatsSingle';
-import NewCatForm from './NewCatForm';
+import CatCardsAll from './CatCardsAll';
+import CatsSingle from './CatCardOne';
+import NewCatForm from './CatAddForm';
 
 function CatContainer({catsArray}) {
-
-  const catMap = catsArray.map(cat => {
-    <CatsAll 
+  const catCards = catsArray.map((cat) => (
+    <CatCardsAll
       key={cat.id}
-      id={cat.id}
-      name={cat.name}
-      image={cat.image}
-      gender={cat.gender}
-      description={cat.description}
-      temperament={cat.temperament}
-      tnrStatus={cat.tnrStatus}
-      />
-  } )
-console.log(catsArray, "container")
-  return (
-    <div>CatContainer
+      cat={cat}
+    />
+  ));
 
-      {/* <CatsAll/> */}
-      {catMap}
-      {/* <CatsSingle />
-      <NewCatForm /> */}
-    </div>
+  return (
+    <div className="catContainer">{catCards}</div>
   )
 }
 
 export default CatContainer
+
+// name={cat.name}
+// image={cat.image}
+// gender={cat.gender}
+// description={cat.description}
+// temperament={cat.temperament}
+// tnrStatus={cat.tnrStatus}

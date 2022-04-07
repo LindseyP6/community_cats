@@ -1,4 +1,28 @@
-.App {
+* {
   text-align: center;
   font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+h2 {
+  font-style: 'Montserrat';
+  font-size: 40px;
+}
+
+/* .catContainer {
+  border: 1px solid black;
+} */
+
+.allCats {
+  border: 1px solid green;
+  width: 500px;
+  width: 500px;
+}
+
+.allCats img {
+  max-width: 300px;
+  max-height: 300px;
 }

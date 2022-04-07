@@ -26,7 +26,7 @@ User.create(
 
 Cat.create(
     name: "Alfie",
-    image: "../client/images/alfie.jpeg",
+    image: "../images/alfie.jpeg",
     gender: "female",
     latitude: 40.611282,
     longitutde: -74.005848,
@@ -40,7 +40,7 @@ Cat.create(
 )
 Cat.create(
     name: "Luna",
-    image: "../client/images/luna.jpeg",
+    image: "../images/luna.jpeg",
     gender: "female",
     latitude: 40.611270,
     longitutde: -74.005821,
@@ -54,7 +54,7 @@ Cat.create(
 )
 Cat.create(
     name: "Spooky",
-    image: "../client/images/spooky.jpeg",
+    image: "../images/spooky.jpeg",
     gender: "male",
     latitude: 40.611220,
     longitutde: -74.004120,
@@ -68,7 +68,7 @@ Cat.create(
 )
 Cat.create(
     name: "Ally",
-    image: "",
+    image: "../images/ally.jpeg",
     gender: "female",
     latitude: 40.611427,
     longitutde: -74.005551,
