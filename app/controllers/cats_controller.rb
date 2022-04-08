@@ -29,7 +29,8 @@ class CatsController < ApplicationController
     private
 
     def cat_params
-        params.permit(:name, :image, :gender, :latitude, :longitude, :description, :temperament, :tnr_status, :tnr_date, :trap_date, :special_notes, :user_id)
+        params.permit(:name, :image, :gender, :description, :temperament, :tnr_status, :tnr_date, :trap_date, :special_notes, :user_id)
+        # :latitude, :longitude,
     end
 
 end

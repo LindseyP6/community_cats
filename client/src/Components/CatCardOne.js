@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import EditCatForm from './EditCatForm'
 
 
-function CatsSingle() {
+function CatsSingle({handleCatUpdate}) {
   const [cat, setCat] = useState([]);
   const {id} = useParams()
 
@@ -25,7 +25,7 @@ function CatsSingle() {
       <li><strong>Temperment: </strong>{temperament}</li>
       <li><strong>TNR Status: </strong> {tnr_status}</li>
       <li><strong>Human Caretaker: </strong>{human_name}</li>
-      {/* <EditCatForm /> */}
+      <EditCatForm handleCatUpdate={handleCatUpdate}/>
     </div>
   )
 }

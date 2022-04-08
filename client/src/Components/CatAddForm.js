@@ -8,9 +8,13 @@ function CatAddForm({catsArray, onAddCatForm}) {
   const [temperament, setTemperament] = useState("")
   const [tnr_status, setTnr_status] = useState("")
   const [tnr_date, setTnr_date] = useState("")
+  const [trap_date, setTrap_date] = useState("")
   const [special_notes, setSpecial_notes] = useState("")
+  const [user_id, setUser_id] = useState("")
+
 
   function handleSubmit(e) {
+    e.preventDefault();
     const newCat = {
         name,
         image,
@@ -19,10 +23,10 @@ function CatAddForm({catsArray, onAddCatForm}) {
         temperament,
         tnr_status,
         tnr_date,
+        trap_date,
         special_notes,
-        // user_id: user.id,
+        user_id,
     }
-    e.preventDefault();
     fetch("/cats", {
       method: "POST",
       headers: {
@@ -30,9 +34,18 @@ function CatAddForm({catsArray, onAddCatForm}) {
       },
       body: JSON.stringify(newCat),
     })
-      .then((response) => response.json())
-      .then(cat => console.log(name))
-      .then((cat) => onAddCatForm(cat));
+      .then(res => res.json())
+      .then((data) => onAddCatForm(data)); 
+      setName(""); 
+      setImage(""); 
+      setGender(""); 
+      setDescription(""); 
+      setTemperament(""); 
+      setTnr_status(""); 
+      setTnr_date(""); 
+      setTrap_date(""); 
+      setSpecial_notes(""); 
+      setUser_id("");
   }
 
   return (
@@ -46,31 +59,77 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-{/* 
-        <label> Image
-          <input>
+        <label>User ID: 
+          <input
             name="name"
+            value={user_id}
+            onChange={(e) => setUser_id(e.target.value)}
+          />
+        </label>
+
+        <label>Image: 
+          <input
+            name="image"
             value={image}
             onChange={(e) => setImage(e.target.value)}
-          </input>
+          />
         </label>
-
-        <label> Gender
-          <input>
-            name="name"
+        <label>Gender: 
+          <input
+            name="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-          </input>
+          />
         </label>
-
-        <label> Description
-          <input>
-            name="name"
+        <label>Description: 
+          <input
+            name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          </input>
-        </label> */}
-
+          />
+        </label>
+        <label>Temperament: 
+          <input
+            name="temperament"
+            value={temperament}
+            onChange={(e) => setTemperament(e.target.value)}
+          />
+        </label>
+        <label>TNR Status: 
+          <input
+            name="tnr_status"
+            value={tnr_status}
+            onChange={(e) => setTnr_status(e.target.value)}
+          />
+        </label>
+        <label>TNR Date: 
+          <input
+            name="tnr_date"
+            value={tnr_date}
+            onChange={(e) => setTnr_date(e.target.value)}
+          />
+        </label>
+        <label>Trap Date: 
+          <input
+            name="trap_date"
+            value={trap_date}
+            onChange={(e) => setTrap_date(e.target.value)}
+          />
+        </label>
+        <label>Special Notes: 
+          <input
+            name="special_notes"
+            value={special_notes}
+            onChange={(e) => setSpecial_notes(e.target.value)}
+          />
+        </label>
+        <button 
+          type="submit"
+          name="submit"
+          value="Join!"
+          className="submit"> 
+          <strong>Enter!</strong>
+        </button>
       </form>
     </div>
   )

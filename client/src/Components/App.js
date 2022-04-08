@@ -27,6 +27,17 @@ function App() {
     setCatsArray([newCat, ...catsArray])
   }
 
+  function handleCatUpdate(updatedCat) {
+    const updatedCats = catsArray.map(originalCat => {
+      if (originalCat.id === updatedCat.id) {
+        return updatedCat;
+      } else {
+        return originalCat;
+      }
+    })
+    setCatsArray(updatedCats);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -42,7 +53,7 @@ function App() {
         </Route>
 
         <Route exact path="/cats/:id">
-          <CatCardOne/>
+          <CatCardOne handleCatUpdate={handleCatUpdate}/>
         </Route>
 
         <Route exact path="/new">
