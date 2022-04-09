@@ -11,6 +11,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
   const [trap_date, setTrap_date] = useState("")
   const [special_notes, setSpecial_notes] = useState("")
   const [user_id, setUser_id] = useState("")
+  const [address, setAddress] = useState("")
 
 
   function handleSubmit(e) {
@@ -34,7 +35,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
       },
       body: JSON.stringify(newCat),
     })
-      .then(res => res.json())
+      .then(r => r.json())
       .then((data) => onAddCatForm(data)); 
       setName(""); 
       setImage(""); 
@@ -123,6 +124,13 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setSpecial_notes(e.target.value)}
           />
         </label>
+        {/* <label>Location/Address: 
+          <input
+            name="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </label> */}
         <button 
           type="submit"
           name="submit"

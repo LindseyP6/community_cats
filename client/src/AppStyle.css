@@ -5,6 +5,7 @@
 
 li {
   list-style-type: none;
+  padding: 2px;
 }
 
 h2 {
@@ -12,6 +13,8 @@ h2 {
   font-size: 40px;
 }
 
+
+/* ALL CATS PAGE */
 /* .catContainer {
   border: 1px solid black;
 } */
@@ -25,4 +28,77 @@ h2 {
 .allCats img {
   max-width: 300px;
   max-height: 300px;
+}
+
+
+/* 
+SINGLE CAT CSS  */
+.catCardOne img {
+  width: 700px;
+  height: 700px;
+}
+
+
+/* MAP CSS */
+/* .map {
+  justify-content: center; 
+  position: absolute;
+  bottom: 20%; 
+  left: 10%;
+} */
+
+.mapBox {
+  border: 10px solid black
+}
+
+.mapButton{
+  border-radius: 30%;
+  border: none;
+  background-color: yellow;
+  color: blue;
+}
+
+.markerIcon {
+  width: 40px;
+  height: 40px;
+}
+
+/* .popUpDiv{
+  not sure if i need this
+} */
+
+.popUpContent {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* MODAL CSS */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+}
+
+.model-content {
+  /* width: 500px; */
+  background-color: white;
+}
+
+.modal-header, .modal-footer {
+  padding: 10px;
+}
+.modal-title {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 10px;
 }

@@ -5,10 +5,9 @@ import FilterCats from './FilterCats.js'
 function CatCardsAll({cat}) {
   const {id, name, image, description, tnr_status, temperament, gender, human_name } = cat;
 
-  console.log(cat)
-  function handleClick(){
-    console.log(id)
-  }
+  // function handleClick(){
+  //   console.log(id)
+  // }
   return (
     <div className="allCats">
 

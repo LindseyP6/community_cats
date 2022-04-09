@@ -8,7 +8,7 @@ function EditCatForm({catsArray, handleCatUpdate}) {
 
   useEffect(() => {
     fetch(`/cats/${id}`)
-    .then(res => res.json())
+    .then(r => r.json())
     .then((data) => setFormState(data)); 
   }, [id])
   
@@ -22,10 +22,11 @@ function EditCatForm({catsArray, handleCatUpdate}) {
       },
       body: JSON.stringify(formState)
     })
-      .then(res => res.json())
+      .then(r => r.json())
       .then(updatedCat => {
         handleCatUpdate(updatedCat)
-        history.push(`/cats`)
+        history.go(0)
+        // history.push(`/cats`)
       })
   }
 

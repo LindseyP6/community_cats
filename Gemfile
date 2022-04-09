@@ -50,3 +50,4 @@ end
 
 gem "active_model_serializers", "~> 0.10.12"
 gem 'irb'
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
