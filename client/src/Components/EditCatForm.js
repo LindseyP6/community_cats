@@ -5,6 +5,7 @@ function EditCatForm({catsArray, handleCatUpdate}) {
   const [formState, setFormState] = useState({});
   const {id} = useParams();
   const history = useHistory();
+          // history.push(`/cats`)
 
   useEffect(() => {
     fetch(`/cats/${id}`)
