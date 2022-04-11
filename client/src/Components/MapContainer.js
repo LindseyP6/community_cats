@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import Map, { Marker, Popup, NavigationControl} from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
-// import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
-// import Geocoder from 'react-map-gl-geocoder'
 import { IoLogoOctocat } from "react-icons/io";
 
 // import { FaCat } from "react-icons/fa";
@@ -76,7 +74,6 @@ function MapContainer({cats, mapToken}) {
         ) : null}
       </div>
       <NavigationControl />
-      {/* <Geocoder /> */}
     </Map>
   </div>
   )

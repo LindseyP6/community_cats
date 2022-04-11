@@ -11,6 +11,7 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "react-map-gl": "^7.0.10"
+    "react-map-gl": "^7.0.10",
+    "react-map-gl-geocoder": "^2.0.13"
   }
 }
