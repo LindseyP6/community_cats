@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom';
-import Map, { Marker, Popup, NavigationControl} from "react-map-gl";
+import Map, { Marker, Popup, NavigationControl, FullscreenControl} from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Geocoder from "react-map-gl-geocoder";
 import { IoLogoOctocat } from "react-icons/io";
 
 // import { FaCat } from "react-icons/fa";
@@ -17,6 +18,15 @@ function MapContainer({cats, mapToken}) {
     width: "50vw",
   });
 
+  const fullscreenControlStyle = {
+    top: 10,
+    right: -2,
+  };
+
+  const navStyle = {
+    top: 10,
+    left: 11,
+  };
   useEffect(() => {
     const listener = (e)=> {
       if (e.key === "Escape") {
@@ -73,7 +83,8 @@ function MapContainer({cats, mapToken}) {
           </Popup>
         ) : null}
       </div>
-      <NavigationControl />
+      <NavigationControl style={navStyle}/>
+      <FullscreenControl style={fullscreenControlStyle}/>
     </Map>
   </div>
   )
