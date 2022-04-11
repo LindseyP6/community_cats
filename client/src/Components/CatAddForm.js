@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function CatAddForm({catsArray, onAddCatForm}) {
+function CatAddForm({catsArray, onAddCatForm, currentUser}) {
   const [name, setName] = useState("")
   const [image, setImage] = useState("")
   const [gender, setGender] = useState("")
@@ -26,7 +26,8 @@ function CatAddForm({catsArray, onAddCatForm}) {
         tnr_date,
         trap_date,
         special_notes,
-        user_id,
+        user_id: currentUser.id,
+        address,
     }
     fetch("/cats", {
       method: "POST",
@@ -46,7 +47,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
       setTnr_date(""); 
       setTrap_date(""); 
       setSpecial_notes(""); 
-      setUser_id("");
+      setAddress("");
   }
 
   return (
@@ -60,14 +61,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <label>User ID: 
-          <input
-            name="name"
-            value={user_id}
-            onChange={(e) => setUser_id(e.target.value)}
-          />
-        </label>
-
+      
         <label>Image: 
           <input
             name="image"
@@ -75,6 +69,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setImage(e.target.value)}
           />
         </label>
+
         <label>Gender: 
           <input
             name="gender"
@@ -82,6 +77,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setGender(e.target.value)}
           />
         </label>
+
         <label>Description: 
           <input
             name="description"
@@ -89,6 +85,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
+
         <label>Temperament: 
           <input
             name="temperament"
@@ -96,6 +93,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setTemperament(e.target.value)}
           />
         </label>
+
         <label>TNR Status: 
           <input
             name="tnr_status"
@@ -103,6 +101,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setTnr_status(e.target.value)}
           />
         </label>
+
         <label>TNR Date: 
           <input
             name="tnr_date"
@@ -110,6 +109,7 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setTnr_date(e.target.value)}
           />
         </label>
+
         <label>Trap Date: 
           <input
             name="trap_date"
@@ -124,13 +124,14 @@ function CatAddForm({catsArray, onAddCatForm}) {
             onChange={(e) => setSpecial_notes(e.target.value)}
           />
         </label>
-        {/* <label>Location/Address: 
+        
+        <label>Location/Address: 
           <input
             name="address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-        </label> */}
+        </label>
         <button 
           type="submit"
           name="submit"

@@ -10,6 +10,12 @@ class UsersController < ApplicationController
         render json: current_user
     end 
 
+    def updated
+        user = User.find(params[:id])
+        user.update!(user_params)
+        render json: user, status: :accepted
+    end
+
     def create
         user = User.create!(user_params)
         render json: user, status: :created

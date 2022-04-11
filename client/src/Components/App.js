@@ -38,6 +38,10 @@ function App() {
       setCatsArray(updatedCats)
   }
 
+  function handleChangeToMyCats(){
+    const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
+    setCatsArray(myCatsList)
+  }
   // function handleDelete(id) {
   //   fetch(`/cats/${id}`, {
   //     method: "DELETE",
@@ -90,11 +94,11 @@ function App() {
         </Route>
 
         <Route exact path="/new">
-          <CatAddForm catsArray={catsArray} onAddCatForm={onAddCatForm} />
+          <CatAddForm catsArray={catsArray} onAddCatForm={onAddCatForm} currentUser={currentUser}/>
         </Route>
 
         <Route exact path="/cats">
-          <CatContainer catsArray={catsArray} />
+          <CatContainer catsArray={catsArray} currentUser={currentUser} handleChangeToMyCats={handleChangeToMyCats} />
         </Route>
       </Switch>
     </div>

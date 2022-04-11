@@ -2,7 +2,7 @@ import React from 'react'
 import {useParams, Link} from 'react-router-dom';
 import FilterCats from './FilterCats.js'
 
-function CatCardsAll({cat}) {
+function CatCardsAll({cat, currentUser}) {
   const {id, name, image, description, tnr_status, temperament, gender, human_name } = cat;
 
   // function handleClick(){
