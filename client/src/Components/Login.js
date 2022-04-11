@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 
-function Login({onLogin}) {
+function Login({setCurrentUser}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([])
@@ -21,9 +21,10 @@ function Login({onLogin}) {
     })
     .then(res => res.json())
     .then(json => {
-        console.log(json)
+        setCurrentUser(user)
         if(json.errors) setErrors(json.errors)
     })
+    // history.go(0)
     history.push(`/`)
 }
 

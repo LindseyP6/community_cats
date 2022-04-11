@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    skip_before_action :authorized_user, only: :create
+
     def index
         # session[:session_hello] ||= "World"
         # cookies[:cookies_hello] ||= "World"
@@ -15,4 +17,9 @@ class SessionsController < ApplicationController
             byebug
         end 
     end 
+
+    def destroy
+        session.delete :current_user  
+    end 
+    
 end

@@ -18,7 +18,7 @@ function App() {
   const [catsArray, setCatsArray] = useState([]);
   const mapboxAccessToken="pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ"
   const history = useHistory();
-  const [user, setUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(()=>{
     fetch("/cats")
@@ -59,17 +59,22 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
+    fetch("/auth")
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setCurrentUser(user));
       }
     });
   }, []);
 
+  //maybe turn this back on
+  // if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+
   return (
     <div className="App">
-      <Header />
-      {/* <MapContainer cats={catsArray} mapToken={mapboxAccessToken} /> */}
+      <Header setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+
+      <MapContainer cats={catsArray} mapToken={mapboxAccessToken} />
       
       <Switch>
         <Route path="/signup">
@@ -77,9 +82,7 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login 
-          // onLogin={setUser}
-          />
+          <Login setCurrentUser={setCurrentUser}/>
         </Route>
 
         <Route exact path="/cats/:id">

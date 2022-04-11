@@ -14,18 +14,18 @@ function MapContainer({cats, mapToken}) {
     latitude: 40.611401,
     longitude: -74.005630,
     zoom: 15,
-    height: "50vh",
-    width: "50vw",
+    height: "80vh",
+    width: "70vw"
   });
 
   const fullscreenControlStyle = {
     top: 10,
-    right: -2,
+    right: 10,
   };
 
   const navStyle = {
     top: 10,
-    left: 11,
+    left: 10,
   };
   useEffect(() => {
     const listener = (e)=> {
@@ -83,8 +83,10 @@ function MapContainer({cats, mapToken}) {
           </Popup>
         ) : null}
       </div>
-      <NavigationControl style={navStyle}/>
-      <FullscreenControl style={fullscreenControlStyle}/>
+      <div className="mapControllers">
+        <NavigationControl style={navStyle}/>
+        <FullscreenControl style={fullscreenControlStyle}/>
+      </div>
     </Map>
   </div>
   )
