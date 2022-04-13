@@ -16,20 +16,36 @@ import FilterCats from './FilterCats';
 
 function App() {
   const [catsArray, setCatsArray] = useState([]);
+  const [catId, setCatId] = useState(null);
   const mapboxAccessToken="pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ"
   const history = useHistory();
-  const [currentUser, setCurrentUser] = useState(null);
-
+  const [currentUser, setCurrentUser] = useState({});
+  const [searchTerm, setSearchTerm] = useState("")
+console.log(currentUser, "app")
   useEffect(()=>{
     fetch("/cats")
     .then(r => r.json())
     .then(setCatsArray)
   }, [])
 
-  function onAddCatForm(newCat) {
-    setCatsArray([newCat, ...catsArray])
-  }
+  useEffect(() => {
+    fetch("/me")
+    .then((r) => r.json())
+    .then(setCurrentUser)
+    // .then((r) => {
+    //   if (r.ok) {
+    //     r.json().then((user) => setCurrentUser(user));
+    //   }
+    // });
+  }, []);
 
+  const cat = catsArray.find(c => {
+    if (catId) {
+      return c.id === catId
+    }else {
+      return {}
+    }
+  })
 
   function handleCatUpdate(updatedCat) {
     const updatedCats = catsArray.map(originalCat => 
@@ -42,6 +58,18 @@ function App() {
     const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
     setCatsArray(myCatsList)
   }
+
+  const searchCats = catsArray.filter((cat) => {
+    return cat.name.includes(searchTerm)
+    || cat.human_name.includes(searchTerm)
+    || cat.address.includes(searchTerm);
+  });
+
+  function onAddCatForm(newCat) {
+    setCatsArray([newCat, ...searchCats])
+  }
+  // setFormIsShowing((formIsShowing) => !formIsShowing);
+
   // function handleDelete(id) {
   //   fetch(`/cats/${id}`, {
   //     method: "DELETE",
@@ -56,29 +84,27 @@ function App() {
   //   });
   // }
 
+  
+
   function handleDelete(id){
     const byebyeCat = catsArray.filter(cat => cat.id !==id)
     setCatsArray(byebyeCat)
-    history.push('/cats')
   }
 
-  useEffect(() => {
-    fetch("/auth")
-    .then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setCurrentUser(user));
-      }
-    });
-  }, []);
 
   //maybe turn this back on
-  // if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
+  if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
 
   return (
-    <div className="App">
-      <Header setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+    <div className="app">
+      <Header 
+        setCurrentUser={setCurrentUser}
+        currentUser={currentUser}/>
 
-      <MapContainer cats={catsArray} mapToken={mapboxAccessToken} />
+      <MapContainer 
+        catsArray={searchCats} 
+        // catsArray={catsArray} 
+        mapToken={mapboxAccessToken} />
       
       <Switch>
         <Route path="/signup">
@@ -86,19 +112,32 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login setCurrentUser={setCurrentUser}/>
+          <Login setCurrentUser={setCurrentUser} />
         </Route>
 
         <Route exact path="/cats/:id">
-          <CatCardOne handleCatUpdate={handleCatUpdate} handleDelete={handleDelete}/>
+          <CatCardOne 
+            cat={cat}
+            handleCatUpdate={handleCatUpdate} 
+            handleDelete={handleDelete} />
         </Route>
 
         <Route exact path="/new">
-          <CatAddForm catsArray={catsArray} onAddCatForm={onAddCatForm} currentUser={currentUser}/>
+          <CatAddForm 
+            catsArray={searchCats} 
+            // catsArray={catsArray}
+            onAddCatForm={onAddCatForm} 
+            currentUser={currentUser} />
         </Route>
 
         <Route exact path="/cats">
-          <CatContainer catsArray={catsArray} currentUser={currentUser} handleChangeToMyCats={handleChangeToMyCats} />
+          <CatContainer 
+            catsArray={searchCats} 
+            // catsArray={catsArray}
+            currentUser={currentUser} 
+            handleChangeToMyCats={handleChangeToMyCats} 
+            searchTerm={searchTerm} 
+            setSearchTerm={setSearchTerm} />
         </Route>
       </Switch>
     </div>

@@ -8,7 +8,7 @@ import { IoLogoOctocat } from "react-icons/io";
 // import { FaCat } from "react-icons/fa";
 // import { GiCat } from "react-icons/gi";
 
-function MapContainer({cats, mapToken}) {
+function MapContainer({catsArray, mapToken}) {
   const [selectedCat, setSelectedCat] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: 40.611401,
@@ -50,7 +50,7 @@ function MapContainer({cats, mapToken}) {
       }}
       mapStyle="mapbox://styles/lindsisradd/cl19txpq1000p14nxnyystcsl"
     >
-      {cats?.map((cat) => (
+      {catsArray?.map((cat) => (
         <Marker
           key={cat.id}
           latitude={cat.latitude}
@@ -76,6 +76,7 @@ function MapContainer({cats, mapToken}) {
           >
             <div className="popUpContent">
               <h3>{selectedCat.name}</h3>
+              {/* <p><img src="../images/spooky.jpeg" alt={selectedCat.name} width="50px"/></p> */}
               <li><strong>Temperament: </strong>{selectedCat.temperament}</li>
               <li><strong>Caretaker: </strong> {selectedCat.human_name}</li>
               <li><Link to={`/cats/${selectedCat.id}`}>See Details</Link></li>

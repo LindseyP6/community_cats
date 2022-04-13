@@ -1,17 +1,17 @@
-# Geocoder.configure(
+Geocoder.configure(
 
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
-  # lookup: :nominatim,         # name of geocoding service (symbol)
-  # ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)
-  # language: :en,              # ISO-639 language code
-  # use_https: true,           # use HTTPS for lookup requests? (if supported)
+  lookup: :mapbox,         # name of geocoding service (symbol)
+  ip_lookup: :freegeoip,      # name of IP address geocoding service (symbol)
+  language: :en,              # ISO-639 language code
+  use_https: false,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
   # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
-  # api_key: nil,               # API key for geocoding service
-  # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
+  api_key: "pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ",               # API key for geocoding service
+  # cache: Redis.new,                 # cache object (must respond to #[], #[]=, and #del)
   # cache_prefix: 'geocoder:',  # DEPRECATED, please use cache_options[:prefix] instead
-  # # mapbox => {:dataset => "mapbox.places-permanent"}
+  # mapbox => {:dataset => "mapbox.places-permanent"}
 
   # Exceptions that should not be rescued by default
   # (if you want to implement custom error handling);
@@ -19,8 +19,8 @@
   # always_raise: [],
 
   # Calculation options
-  # units: :mi,                 # :km for kilometers or :mi for miles
-  # distances: :linear          # :spherical or :linear
+  units: :mi,                 # :km for kilometers or :mi for miles
+  distances: :linear          # :spherical or :linear
 
   # Cache configuration
   # cache_options: {
@@ -28,7 +28,7 @@
   #   prefix: 'geocoder:'
   # }
 
-# )
+)
 
 # Geocoder.configure(
 #   # street address geocoding service (default :nominatim)

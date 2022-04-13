@@ -22,13 +22,8 @@ function Modal(props, handleCatUpdate) {
         body: JSON.stringify(formState)
       })
         .then(r => r.json())
-        .then(handleCatUpdate(id))
+        .then(() => handleCatUpdate(id))
         history.go(0)
-        // history.push(`/cats/${id}`)
-        // .then(updatedCat => {
-        //   handleCatUpdate(updatedCat)
-        //   history.push(`/cats/${id}`)
-        // })
     }
   
     function handleChange(event) {

@@ -12,6 +12,7 @@ class CatsController < ApplicationController
 
     def create
         cat = Cat.create!(cat_params)
+        @convert_address_to_coordinates
         render json: cat, status: :created
     end
 
@@ -30,7 +31,7 @@ class CatsController < ApplicationController
     private
 
     def cat_params
-        params.permit(:name, :image, :gender, :description, :temperament, :tnr_status, :tnr_date, :trap_date, :special_notes, :user_id)
+        params.permit(:name, :address, :image, :gender, :description, :temperament, :tnr_status, :tnr_date, :trap_date, :special_notes, :user_id)
         # :latitude, :longitude,
     end
 

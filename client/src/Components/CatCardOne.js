@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link, useHistory} from 'react-router-dom';
 import EditCatForm from './EditCatForm';
 import Modal from './Modal';
 
 function CatsSingle({handleCatUpdate, handleDelete}) {
-  const [cat, setCat] = useState([]);
+  const [cat, setCat] = useState({});
   const [formIsShowing, setFormIsShowing] = useState(false)
   const [show, setShow] = useState(false);
-
+  const history = useHistory();
   const {id} = useParams()
 
   useEffect(() => {
     fetch(`/cats/${id}`)
         .then(r => r.json())
-        .then(cats =>setCat(cats));
+        .then(cat => setCat(cat));
       }, [id])
 
   function toggleEditForm() {
@@ -24,21 +24,28 @@ function CatsSingle({handleCatUpdate, handleDelete}) {
     fetch(`/cats/${id}`, {
       method: "DELETE",
     })
-    .then(r => r.json())
-    .then(handleDelete(id))
+    // .then(r => r.json())
+    .then(() => handleDelete(id))
+    history.push('/cats')
   }
 
   const {name, image, description, tnr_status, temperament, gender, human_name } = cat;
   return (
     <div className="catCardOne">
-      <h2>{name}</h2>
-      <img src={image} alt={name}/>
-      <li><strong>Gender: </strong>{gender}</li>
-      <li><strong>Description: </strong>{description}</li>
-      <li><strong>Temperment: </strong>{temperament}</li>
-      <li><strong>TNR Status: </strong> {tnr_status}</li>
-      <li><strong>Human Caretaker: </strong>{human_name}</li>
-
+      <div className="linkBack">
+        <Link to={`/cats`}>
+          <button>Back to All Cats</button>
+        </Link>  
+      </div>
+      <div className="singleCatDetails">
+        <h2>{name}</h2>
+        <img src={image} alt={name}/>
+        <li><strong>Gender: </strong>{gender}</li>
+        <li><strong>Description: </strong>{description}</li>
+        <li><strong>Temperment: </strong>{temperament}</li>
+        <li><strong>TNR Status: </strong> {tnr_status}</li>
+        <li><strong>Human Caretaker: </strong>{human_name}</li>
+      </div>
 
       <button onClick={handleDeleteClick}>Delete</button>
       {/* onClick={() => handleDelete(id)} */}

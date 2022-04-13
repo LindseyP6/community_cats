@@ -1,9 +1,9 @@
 import React from 'react'
 import CatCardsAll from './CatCardsAll';
-import CatsSingle from './CatCardOne';
+import FilterCats from './FilterCats';
 import NewCatForm from './CatAddForm';
 
-function CatContainer({catsArray, currentUser, handleChangeToMyCats}) {
+function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTerm, searchTerm}) {
   console.log(currentUser)
   
   // const catsByUser = catsArray.filter(cat => {
@@ -27,6 +27,10 @@ function CatContainer({catsArray, currentUser, handleChangeToMyCats}) {
   //     setCatsArray(updatedCats)
   // }
 
+  // function handleChangeToAllCats(){
+  //   handleChangeToMyCats(!handleChangeToMyCats)
+  // }
+
   const catCards = catsArray.map((cat) => (
     <CatCardsAll
       key={cat.id}
@@ -35,12 +39,25 @@ function CatContainer({catsArray, currentUser, handleChangeToMyCats}) {
     />
   ));
 
+  // function handleChangeToMyCats(){
+  //   const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
+  //   setCatsArray(myCatsList)
+  // }
+  //const filteredCats= catsArray.filter(cat => currentUser.id === cat.user_id).map(filteredCat => <CatCardsAll />) 
+  // function handleChangeToMyCats(){
+  //   const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
+  //   setCatsArray(myCatsList)
+  // }
+
   return (
-    <div className="catContainer">
+    <div>
       <div className="myCats">
-        <button onClick={handleChangeToMyCats}>My Cats</button>
+        <FilterCats handleChangeToMyCats={handleChangeToMyCats} setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
+        {/* <button onClick={handleChangeToAllCats}>All Cats</button> */}
       </div>
-      {catCards}
+      <div className="allCatsContainer">
+        {catCards}
+      </div>
     </div>
   )
 }
