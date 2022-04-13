@@ -1,7 +1,7 @@
 import React from 'react'
 import CatCardsAll from './CatCardsAll';
 import FilterCats from './FilterCats';
-import NewCatForm from './CatAddForm';
+// import NewCatForm from './CatAddForm';
 
 function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTerm, searchTerm}) {
   console.log(currentUser)

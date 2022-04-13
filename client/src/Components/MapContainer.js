@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import Map, { Marker, Popup, NavigationControl, FullscreenControl} from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Geocoder from "react-map-gl-geocoder";
+// import Geocoder from "react-map-gl-geocoder";
 import { IoLogoOctocat } from "react-icons/io";
 
 // import { FaCat } from "react-icons/fa";

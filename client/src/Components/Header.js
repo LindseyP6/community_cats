@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Header({setCurrentUser, currentUser}) {
 
@@ -18,13 +18,15 @@ console.log("header", currentUser)
     <div className="header">
       <h2>Community Cat Catalog</h2>
       <div className="navLinks">
-        <NavLink exact to="/">Main/Map  |  </NavLink>  
+        <NavLink exact to="/">Home  |  </NavLink>  
         <NavLink exact to="/cats">All Cats  |  </NavLink>
-        <NavLink exact to="/signup">Signup  |  </NavLink>
-        <NavLink exact to="/login">Login  |  </NavLink>
         <NavLink exact to="/new">Add Cat!  |  </NavLink>
+        <Link to={`/login`}>
+          <button>Login</button>
+        </Link>  
         <button onClick={logout}>Logout</button>
       </div>
+      
       <div className="helloUser">
         {currentUser ? <h4>Hello {currentUser.name}</h4> : null}
       </div>

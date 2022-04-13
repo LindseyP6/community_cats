@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import Signup from './Signup'
 
 function Login({setCurrentUser}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([])
+  const [formIsShowing, setFormIsShowing] = useState(false)
   const history = useHistory();
 
   function handleSubmit(e){
@@ -26,6 +28,11 @@ function Login({setCurrentUser}) {
     })
     // history.go(0)
     history.push(`/`)
+}
+
+
+function toggleEditForm() {
+  setFormIsShowing((formIsShowing) => !formIsShowing);
 }
 
   return (
@@ -53,6 +60,10 @@ function Login({setCurrentUser}) {
 
       {errors?errors.map(e => <div>{e}</div>):null}
 
+
+      <button onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
+      {formIsShowing ? <Signup /> 
+      : null}
     </div>
   );
 }
