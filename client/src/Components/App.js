@@ -9,8 +9,6 @@ import CatContainer from './CatContainer';
 
 import CatCardOne from './CatCardOne';
 import CatAddForm from './CatAddForm';
-
-import EditCatForm from './EditCatForm';
 import FilterCats from './FilterCats';
 
 

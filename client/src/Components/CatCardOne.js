@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, Link, useHistory} from 'react-router-dom';
-import EditCatForm from './EditCatForm';
-import Modal from './Modal';
+import EditCatModal from './EditCatModal';
 
 function CatCardOne({handleCatUpdate, handleDelete}) {
   const [cat, setCat] = useState({});
@@ -16,9 +15,6 @@ function CatCardOne({handleCatUpdate, handleDelete}) {
         .then(cat => setCat(cat));
       }, [id])
 
-  function toggleEditForm() {
-    setFormIsShowing((formIsShowing) => !formIsShowing);
-  }
 
   function handleDeleteFromDatabase(){
     fetch(`/cats/${id}`, {
@@ -54,12 +50,8 @@ function CatCardOne({handleCatUpdate, handleDelete}) {
       <button onClick={handleDeleteClick}>Delete</button>
       {/* onClick={() => handleDelete(id)} */}
 
-      <button onClick={toggleEditForm}>Edit Details</button>
-      {formIsShowing ? <EditCatForm handleCatUpdate={handleCatUpdate}/> 
-      : null}
-
       <button onClick={() => setShow(true)}>Modal</button>
-      <Modal onClose={() => setShow(false)} handleCatUpdate={handleCatUpdate} show={show}/> 
+      <EditCatModal onClose={() => setShow(false)} handleCatUpdate={handleCatUpdate} show={show}/> 
 
     </div>
   )

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams, useHistory} from 'react-router-dom';
 
-function Modal(props, handleCatUpdate) {
+function EditCatModal(props, handleCatUpdate) {
     const [formState, setFormState] = useState({});
     const {id} = useParams();
     const history = useHistory();
@@ -131,4 +131,4 @@ function Modal(props, handleCatUpdate) {
   );
 }
 
-export default Modal;
+export default EditCatModal;
