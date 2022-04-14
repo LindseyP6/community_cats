@@ -1,10 +1,10 @@
 * {
-  text-align: center;
+  /* text-align: center; */
   font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 }
 .app, .body{
   /* background-color: #363636; */
-  background-color: #4c4c4c
+  background-color: #cfcfcf
 }
 
 li {
@@ -12,12 +12,18 @@ li {
   padding: 2px;
 }
 
-h2 {
+.siteNameHeaader {
   font-style: 'Montserrat';
   font-size: 40px;
+  padding: 0;
+  color: #3c6e71;
 }
 
 .header {
+  /* max-width: 300px;
+  position: right;
+  right: 0; */
+  padding: 20px;
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
@@ -25,7 +31,31 @@ h2 {
 }
 
 .navLinks {
-  padding-top: 50px;
+  /* padding-top: 20px; */
+  /* border: 10px solid black; */
+  font-size: 15px;
+}
+
+.navLinkActive {
+  text-decoration: none;
+  color: #3c6e71;
+}
+
+.navLinks button:hover{
+  background-color: #cfcfcf;
+  height: 55px;
+  width: 95px;
+  font-weight: bold;
+}
+
+.navLinks button {
+  border-radius: 20%;
+  height: 40px;
+  width: 80px;
+  padding: 10px;
+  margin: 5px;
+  color: #3c6e71;
+  font-weight: bold;
 }
 
 /* ALL CATS PAGE */
@@ -84,33 +114,48 @@ SINGLE CAT CSS  */
   padding-left: 20%;
   line-height: 1;
 } */
-.map {
+
+
+.mapboxgl-map{
+  /* border: 10px solid orange; */
+  position: absolute;
+}
+
+.pageIntro {
+  width: 15vw;
+  /* border: 1px solid green; */
   justify-content: center;
+  padding-left: 10%;
+  padding-top: 70%;
+}
+
+#map {
   margin: 0 auto;
-  /* display: grid;
+  align-content: normal;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px; */
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .mapBox {
   /* border: 10px solid black; */
   /* padding-left: 20%; */
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 auto;
+  border: 5px solid #3c6e71;
 }
 
 .mapButton{
   border-radius: 30%;
   border: none;
-  background-color: yellow;
-  color: blue;
+  background-color: #3c6e71;
+  color: white;
 }
 
 .markerIcon {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 }
 
 /* .popUpDiv{

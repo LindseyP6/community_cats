@@ -30,14 +30,9 @@ console.log(currentUser, "app")
 
   useEffect(() => {
     fetch("/me")
-    .then((r) => r.json())
-    .then(setCurrentUser)
-    // .then((r) => {
-    //   if (r.ok) {
-    //     r.json().then((user) => setCurrentUser(user));
-    //   }
-    // });
-  }, []);
+      .then((res) => res.json())
+      .then((currentUser) => setCurrentUser(currentUser))
+  }, [])
 
   const cat = catsArray.find(c => {
     if (catId) {
@@ -101,7 +96,7 @@ console.log(currentUser, "app")
         setCurrentUser={setCurrentUser}
         currentUser={currentUser}/>
 
-      <MapContainer 
+      <MapContainer
         catsArray={searchCats} 
         // catsArray={catsArray} 
         mapToken={mapboxAccessToken} />
@@ -124,7 +119,7 @@ console.log(currentUser, "app")
 
         <Route exact path="/new">
           <CatAddForm 
-            catsArray={searchCats} 
+            catsArray={catsArray} 
             // catsArray={catsArray}
             onAddCatForm={onAddCatForm} 
             currentUser={currentUser} />
@@ -139,6 +134,7 @@ console.log(currentUser, "app")
             searchTerm={searchTerm} 
             setSearchTerm={setSearchTerm} />
         </Route>
+
       </Switch>
     </div>
   );

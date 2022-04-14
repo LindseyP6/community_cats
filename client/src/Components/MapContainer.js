@@ -14,8 +14,9 @@ function MapContainer({catsArray, mapToken}) {
     latitude: 40.611401,
     longitude: -74.005630,
     zoom: 15,
-    height: "80vh",
-    width: "70vw"
+    height: "70vh",
+    width: "80vw",
+    padding: "50px"
   });
 
   const fullscreenControlStyle = {
@@ -40,7 +41,7 @@ function MapContainer({catsArray, mapToken}) {
   }, []);
 
   return (
-    <div className="map">
+    <div id="map">
     <Map
       className="mapBox"
       {...viewport}
@@ -89,6 +90,12 @@ function MapContainer({catsArray, mapToken}) {
         <FullscreenControl style={fullscreenControlStyle}/>
       </div>
     </Map>
+    <div className="pageIntro">
+      <h2>Hello friends!</h2>
+      <p>
+        Please view the map for more details about cats in your neighborhood. You can also add cats to the map and edit their details.
+      </p>
+    </div>
   </div>
   )
 }
