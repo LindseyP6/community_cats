@@ -4,32 +4,6 @@ import FilterCats from './FilterCats';
 // import NewCatForm from './CatAddForm';
 
 function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTerm, searchTerm}) {
-  console.log(currentUser)
-  
-  // const catsByUser = catsArray.filter(cat => {
-  //   if (currentUser.id === cat.user_id) {
-  //     return cat
-  //   } else {
-  //     return cat
-  //   }
-  // })
-  // console.log(currentUser.id)
-  // function handleDelete(id){
-  //   const byebyeCat = catsArray.filter(cat => cat.id !==id)
-  //   setCatsArray(byebyeCat)
-  //   history.push('/cats')
-  // }
-
-  // function handleCatUpdate(updatedCat) {
-  //   const updatedCats = catsArray.map(originalCat => 
-  //     originalCat.id === updatedCat.id ? updatedCat : originalCat
-  //     );
-  //     setCatsArray(updatedCats)
-  // }
-
-  // function handleChangeToAllCats(){
-  //   handleChangeToMyCats(!handleChangeToMyCats)
-  // }
 
   const catCards = catsArray.map((cat) => (
     <CatCardsAll
@@ -38,16 +12,6 @@ function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTe
       currentUser={currentUser}
     />
   ));
-
-  // function handleChangeToMyCats(){
-  //   const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
-  //   setCatsArray(myCatsList)
-  // }
-  //const filteredCats= catsArray.filter(cat => currentUser.id === cat.user_id).map(filteredCat => <CatCardsAll />) 
-  // function handleChangeToMyCats(){
-  //   const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
-  //   setCatsArray(myCatsList)
-  // }
 
   return (
     <div>

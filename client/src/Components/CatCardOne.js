@@ -3,7 +3,7 @@ import {useParams, Link, useHistory} from 'react-router-dom';
 import EditCatForm from './EditCatForm';
 import Modal from './Modal';
 
-function CatsSingle({handleCatUpdate, handleDelete}) {
+function CatCardOne({handleCatUpdate, handleDelete}) {
   const [cat, setCat] = useState({});
   const [formIsShowing, setFormIsShowing] = useState(false)
   const [show, setShow] = useState(false);
@@ -20,13 +20,17 @@ function CatsSingle({handleCatUpdate, handleDelete}) {
     setFormIsShowing((formIsShowing) => !formIsShowing);
   }
 
-  function handleDeleteClick(){
+  function handleDeleteFromDatabase(){
     fetch(`/cats/${id}`, {
       method: "DELETE",
     })
-    // .then(r => r.json())
-    .then(() => handleDelete(id))
+  }
+
+  function handleDeleteClick(){
+    handleDelete(id)
+    handleDeleteFromDatabase()
     history.push('/cats')
+    history.go(0)
   }
 
   const {name, image, description, tnr_status, temperament, gender, human_name } = cat;
@@ -61,4 +65,4 @@ function CatsSingle({handleCatUpdate, handleDelete}) {
   )
 }
 
-export default CatsSingle
+export default CatCardOne

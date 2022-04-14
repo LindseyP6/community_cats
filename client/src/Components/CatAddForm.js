@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CatAddForm({ catsArray, onAddCatForm, currentUser }) {
+function CatAddForm({ catsArray, addNewCat, currentUser }) {
   const [formState, setFormState] = useState({});
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -26,7 +26,7 @@ function CatAddForm({ catsArray, onAddCatForm, currentUser }) {
       tnr_date,
       trap_date,
       special_notes,
-      user_id: currentUser.id,
+      user_id,
       address,
     };
     fetch("/cats", {
@@ -37,7 +37,8 @@ function CatAddForm({ catsArray, onAddCatForm, currentUser }) {
       body: JSON.stringify(newCat),
     })
       .then((r) => r.json())
-      .then((data) => onAddCatForm(data));
+      .then((data) => addNewCat(data));
+      console.log(newCat)
     setName("");
     setImage("");
     setGender("");
@@ -162,7 +163,10 @@ function CatAddForm({ catsArray, onAddCatForm, currentUser }) {
           // className="hiddenUserField"
             >
             User:
-            <input name="currentUser" value={user_id} onChange={(e) => setUser_id(e.target.value)}/>
+            <input 
+              name="currentUser" 
+              value={user_id} 
+              onChange={(e) => setUser_id(e.target.value)}/>
           </label>
 
         </div>

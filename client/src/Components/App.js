@@ -21,11 +21,12 @@ function App() {
   const history = useHistory();
   const [currentUser, setCurrentUser] = useState({});
   const [searchTerm, setSearchTerm] = useState("")
-console.log(currentUser, "app")
+// console.log(currentUser, "app")
+
   useEffect(()=>{
     fetch("/cats")
     .then(r => r.json())
-    .then(setCatsArray)
+    .then(cats => setCatsArray(cats))
   }, [])
 
   useEffect(() => {
@@ -34,13 +35,24 @@ console.log(currentUser, "app")
       .then((currentUser) => setCurrentUser(currentUser))
   }, [])
 
-  const cat = catsArray.find(c => {
-    if (catId) {
-      return c.id === catId
-    }else {
-      return {}
-    }
-  })
+  // const cat = catsArray.find(c => {
+  //   if (catId) {
+  //     return c.id === catId
+  //   }else {
+  //     return {}
+  //   }
+  // })
+  // const searchCats = catsArray.filter((cat) => {
+  //   return cat.name.includes(searchTerm)
+  //   || cat.human_name.includes(searchTerm)
+  //   || cat.address.includes(searchTerm);
+  // });
+
+    function addNewCat(newCat) {
+    setCatsArray(catsArray => {
+      return[...catsArray, newCat]
+    })
+  }
 
   function handleCatUpdate(updatedCat) {
     const updatedCats = catsArray.map(originalCat => 
@@ -54,35 +66,8 @@ console.log(currentUser, "app")
     setCatsArray(myCatsList)
   }
 
-  const searchCats = catsArray.filter((cat) => {
-    return cat.name.includes(searchTerm)
-    || cat.human_name.includes(searchTerm)
-    || cat.address.includes(searchTerm);
-  });
-
-  function onAddCatForm(newCat) {
-    setCatsArray([newCat, ...searchCats])
-  }
-  // setFormIsShowing((formIsShowing) => !formIsShowing);
-
-  // function handleDelete(id) {
-  //   fetch(`/cats/${id}`, {
-  //     method: "DELETE",
-  //   }).then((resp) => {
-  //     if (resp.ok) {
-  //       setCatsArray((cats) =>
-  //         cats.filter((cat) => cat.id !== id)
-  //       );
-  //       setCatsArray(catsArray);
-  //       history.push("/cats")
-  //     }
-  //   });
-  // }
-
-  
-
   function handleDelete(id){
-    const byebyeCat = catsArray.filter(cat => cat.id !==id)
+    const byebyeCat = catsArray.filter(cat => cat.id !== id)
     setCatsArray(byebyeCat)
   }
 
@@ -97,8 +82,8 @@ console.log(currentUser, "app")
         currentUser={currentUser}/>
 
       <MapContainer
-        catsArray={searchCats} 
-        // catsArray={catsArray} 
+        // catsArray={searchCats} 
+        catsArray={catsArray} 
         mapToken={mapboxAccessToken} />
       
       <Switch>
@@ -112,23 +97,24 @@ console.log(currentUser, "app")
 
         <Route exact path="/cats/:id">
           <CatCardOne 
-            cat={cat}
+            // cat={cat}
+            // catsArray={searchCats} 
             handleCatUpdate={handleCatUpdate} 
             handleDelete={handleDelete} />
         </Route>
 
         <Route exact path="/new">
           <CatAddForm 
-            catsArray={catsArray} 
-            // catsArray={catsArray}
-            onAddCatForm={onAddCatForm} 
+            // catsArray={searchCats} 
+            catsArray={catsArray}
+            addNewCat={addNewCat} 
             currentUser={currentUser} />
         </Route>
 
         <Route exact path="/cats">
           <CatContainer 
-            catsArray={searchCats} 
-            // catsArray={catsArray}
+            // catsArray={searchCats} 
+            catsArray={catsArray}
             currentUser={currentUser} 
             handleChangeToMyCats={handleChangeToMyCats} 
             searchTerm={searchTerm} 

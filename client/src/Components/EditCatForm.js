@@ -27,7 +27,6 @@ function EditCatForm({catsArray, handleCatUpdate}) {
       .then(updatedCat => {
         handleCatUpdate(updatedCat)
         history.go(0)
-        // history.push(`/cats`)
       })
   }
 
