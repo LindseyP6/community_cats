@@ -40,11 +40,11 @@ function App() {
   //     return {}
   //   }
   // })
-  // const searchCats = catsArray.filter((cat) => {
-  //   return cat.name.includes(searchTerm)
-  //   || cat.human_name.includes(searchTerm)
-  //   || cat.address.includes(searchTerm);
-  // });
+  const searchCats = catsArray.filter((cat) => {
+    return cat.name.includes(searchTerm)
+    || cat.human_name.includes(searchTerm)
+    || cat.address.includes(searchTerm);
+  });
 
     function addNewCat(newCat) {
     setCatsArray(catsArray => {
@@ -111,8 +111,8 @@ function App() {
 
         <Route exact path="/cats">
           <CatContainer 
-            // catsArray={searchCats} 
-            catsArray={catsArray}
+            catsArray={searchCats} 
+            // catsArray={catsArray}
             currentUser={currentUser} 
             handleChangeToMyCats={handleChangeToMyCats} 
             searchTerm={searchTerm} 

@@ -38,7 +38,7 @@ function Header({setCurrentUser, currentUser}) {
       <div className='siteNameHeaader'>Community Cat Catalog</div>
 
       <div className="helloUser">
-        {currentUser ? <h4>Hello {"Human!" || currentUser.name}</h4> : null}
+        {currentUser ? <h4>Hello {currentUser.name}</h4> : null}
       </div>
       
 
