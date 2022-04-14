@@ -12,7 +12,7 @@ function Header({setCurrentUser, currentUser}) {
     })
 }
 
-// console.log("header", currentUser)
+console.log("header", currentUser.name)
 
   return (
     <div className="header">

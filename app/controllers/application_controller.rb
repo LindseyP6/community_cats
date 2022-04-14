@@ -1,16 +1,16 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  before_action :authorized_user
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-
-  # def current_user
-  #   User.find_by(id:session[:user_id])
-  # end 
-
-  def authorized_user
-    return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
+  # before_action :authorize
+  
+  def current_user
+    User.find_by(id:session[:user_id])
   end 
+
+  def authorize
+    return render json: {error: "Not Authorized"}, status: :unauthorized unless current_user
+  end
 
   private
 

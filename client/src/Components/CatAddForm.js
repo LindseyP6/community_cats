@@ -26,7 +26,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
       tnr_date,
       trap_date,
       special_notes,
-      user_id,
+      user_id: currentUser.id,
       address,
     };
     fetch("/cats", {

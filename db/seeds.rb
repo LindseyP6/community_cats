@@ -7,35 +7,35 @@ User.create(
     email: "lindsisradd@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
-    password_digest: "123"
+    password: "123"
 )
 User.create(
     name: "Nicole", 
     email: "nicnak@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
-    password_digest: "123"
+    password: "123"
 )
 User.create(
     name: "Cindy", 
     email: "cindy@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
-    password_digest: "123"
+    password: "123"
 )
 User.create(
     name: "Diane", 
     email: "di@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
-    password_digest: "123"
+    password: "123"
 )
 User.create(
     name: "Mei", 
     email: "mei@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
-    password_digest: "123"
+    password: "123"
 )
 
 Cat.create(

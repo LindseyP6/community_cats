@@ -9,10 +9,10 @@ function Login({setCurrentUser}) {
   const [formIsShowing, setFormIsShowing] = useState(false)
   const history = useHistory();
 
-  function handleSubmit(e){
+  function handleLoginSubmit(e){
     e.preventDefault()
     const user = {
-        email: email,
+        email,
         password
     }
    
@@ -22,9 +22,9 @@ function Login({setCurrentUser}) {
       body:JSON.stringify(user)
     })
     .then(res => res.json())
-    .then(json => {
+    .then(user => {
         setCurrentUser(user)
-        if(json.errors) setErrors(json.errors)
+        // if(user.errors) setErrors(user.errors)
     })
     // history.go(0)
     history.push(`/`)
@@ -38,7 +38,7 @@ function toggleEditForm() {
   return (
     <div className="login">
       <form 
-      onSubmit={handleSubmit}
+      onSubmit={handleLoginSubmit}
       >
         <label>Email: 
           <input
