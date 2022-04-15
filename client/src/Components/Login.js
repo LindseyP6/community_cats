@@ -26,7 +26,6 @@ function Login({setCurrentUser}) {
         setCurrentUser(user)
         // if(user.errors) setErrors(user.errors)
     })
-    // history.go(0)
     history.push(`/`)
 }
 

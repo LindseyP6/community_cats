@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import '../AppStyle.css';
 import Header from './Header';
 import Login from './Login';
@@ -14,9 +14,8 @@ import FilterCats from './FilterCats';
 
 function App() {
   const [catsArray, setCatsArray] = useState([]);
-  const [catId, setCatId] = useState(null);
-  const mapboxAccessToken="pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ"
-  const history = useHistory();
+  // const [catId, setCatId] = useState(null);
+  const mapboxAccessToken="pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ";
   const [currentUser, setCurrentUser] = useState({});
   const [searchTerm, setSearchTerm] = useState("")
 // console.log(currentUser, "app")
@@ -41,7 +40,7 @@ function App() {
   //   }
   // })
   const searchCats = catsArray.filter((cat) => {
-    return cat.name.includes(searchTerm)
+    return cat.name.toLowerCase().includes(searchTerm.toLowerCase())
     || cat.human_name.includes(searchTerm)
     || cat.address.includes(searchTerm);
   });
@@ -57,11 +56,6 @@ function App() {
       originalCat.id === updatedCat.id ? updatedCat : originalCat
       );
       setCatsArray(updatedCats)
-  }
-
-  function handleChangeToMyCats(){
-    const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
-    setCatsArray(myCatsList)
   }
 
   function handleDelete(id){
@@ -112,9 +106,11 @@ function App() {
         <Route exact path="/cats">
           <CatContainer 
             catsArray={searchCats} 
+            setCatsArray={setCatsArray} 
             // catsArray={catsArray}
             currentUser={currentUser} 
-            handleChangeToMyCats={handleChangeToMyCats} 
+            // handleChangeToMyCats={handleChangeToMyCats} 
+            // handleChangeToAllCats={handleChangeToAllCats}
             searchTerm={searchTerm} 
             setSearchTerm={setSearchTerm} />
         </Route>

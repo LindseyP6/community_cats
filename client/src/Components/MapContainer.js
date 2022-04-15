@@ -13,7 +13,7 @@ function MapContainer({catsArray, mapToken}) {
   const [viewport, setViewport] = useState({
     latitude: 40.611401,
     longitude: -74.005630,
-    zoom: 15,
+    zoom: 14,
     height: "70vh",
     width: "80vw",
     padding: "50px"
@@ -68,12 +68,13 @@ function MapContainer({catsArray, mapToken}) {
           </button>
         </Marker>
       ))}
-      <div className="popUpDiv">   
+      <div>   
         {selectedCat ? (
           <Popup
             latitude={selectedCat.latitude}
             longitude={selectedCat.longitude}
             onClose={()=>setSelectedCat(null)}
+            className="popUp"
           >
             <div className="popUpContent">
               <h3>{selectedCat.name}</h3>

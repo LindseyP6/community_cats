@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CatCardsAll from './CatCardsAll';
 import FilterCats from './FilterCats';
 // import NewCatForm from './CatAddForm';
 
-function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTerm, searchTerm}) {
+function CatContainer({catsArray, setCatsArray, currentUser, setSearchTerm, searchTerm, handleChangeToAllCats}) {
+  const [toggle, setToggle] = useState("")
 
   const catCards = catsArray.map((cat) => (
     <CatCardsAll
@@ -13,11 +14,18 @@ function CatContainer({catsArray, currentUser, handleChangeToMyCats, setSearchTe
     />
   ));
 
+  function handleChangeToMyCats(){
+    const myCatsList = catsArray.filter(cat => currentUser.id === cat.user_id)
+    setCatsArray(myCatsList)
+  }
+
   return (
     <div>
       <div className="myCats">
-        <FilterCats handleChangeToMyCats={handleChangeToMyCats} setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
-        {/* <button onClick={handleChangeToAllCats}>All Cats</button> */}
+        <FilterCats handleChangeToMyCats={handleChangeToMyCats} setSearchTerm={setSearchTerm} searchTerm={searchTerm} catCards={catCards}/>
+
+        {/* <button onClick={handleChangeToMyCats}>My Cats</button>
+        <button onClick={handleChangeToAllCats}>All Zee Cats</button> */}
       </div>
       <div className="allCatsContainer">
         {catCards}
