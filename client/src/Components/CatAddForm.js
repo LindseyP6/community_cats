@@ -52,7 +52,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
   }
 
   return (
-    <div className="map">
+    <div className="newCatPage">
 
       <form onSubmit={handleSubmit}>
       ADD A NEW CAT
@@ -159,9 +159,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
             />
           </label>
 
-          <label 
-          // className="hiddenUserField"
-            >
+          <label className="hiddenUserField">
             User:
             <input 
               name="currentUser" 
@@ -175,7 +173,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
           type="submit" 
           name="submit" 
           value="Join!" 
-          className="submit">
+          className="allButtons">
           <strong>Add your Cat!</strong>
         </button>
       </form>

@@ -1,8 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import FilterCats from './FilterCats.js'
 
-function CatCardsAll({cat, currentUser}) {
+function CatCardsAll({cat}) {
   const {id, name, image, description, tnr_status, temperament, gender, human_name } = cat;
 
   return (
@@ -15,7 +14,7 @@ function CatCardsAll({cat, currentUser}) {
         <li><strong>TNR Status: </strong> {tnr_status}</li>
         <li><strong>Human Caretaker: </strong>{human_name}</li>
         <Link to={`/cats/${id}`}>
-          <button>More Details</button>
+          <button className="allButtons">More Details</button>
         </Link>  
     </div>
   )

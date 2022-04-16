@@ -1,13 +1,10 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
 
-function FilterCats({handleChangeToMyCats, catCards, setSearchTerm, searchTerm, catsArray}) {
-  let history = useHistory();
+function FilterCats({setSearchTerm, searchTerm,}) {
 
   return (
     <div className="filterSearch">
-        <button onClick={handleChangeToMyCats}>My Cats</button>
-        <button onClick={() => history.go(0)}>All Zee Cats</button>
+      <p>Search cats by name, human name, TNR or Trap Date, address, temperment and description qualities. (Psst...searching will change the map!)</p>
       <label htmlFor="search"><strong>Search Cats </strong></label>
       <input
         type="text"

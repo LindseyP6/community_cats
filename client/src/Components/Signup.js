@@ -63,7 +63,7 @@ function Signup({setCurrentUser}) {
           />
         </label>
 
-        <button type="submit">Sign Up</button>
+        <button className="allButtons" type="submit">Sign Up</button>
       </form>
     </div>
   );

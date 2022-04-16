@@ -15,6 +15,11 @@ class UsersController < ApplicationController
         render json: current_user, status: :ok
     end
 
+    def show
+        user = User.find(params[:id])
+        render json: user, serializer:UserProfileSerializer
+    end
+
     def create
         user = User.create!(user_params)
         session[:user_id] = user.id

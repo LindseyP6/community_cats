@@ -1,10 +1,14 @@
 * {
   /* text-align: center; */
-  font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  /* font-family: 'Quattrocento Sans', sans-serif; */
+  /* font-family: 'Six Caps', sans-serif; */
+  font-family: 'Space Mono', monospace;
+
+  /* font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; */
 }
 .app, .body{
   /* background-color: #363636; */
-  background-color: #cfcfcf
+  background-color: #ecedf2
 }
 
 li {
@@ -12,118 +16,208 @@ li {
   padding: 2px;
 }
 
-.siteNameHeaader {
-  font-style: 'Montserrat';
-  font-size: 40px;
-  padding: 0;
-  color: #3c6e71;
+h1, h2, h3, h4, label{
+  color: #16525b;
 }
 
-.header {
-  /* max-width: 300px;
-  position: right;
-  right: 0; */
-  padding: 20px;
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+.allButtons {
+  border-radius: 10%;
+  margin: 5px;
+  padding: 10px;
+  color: #006466;
+  background-color: #ecedf2;
+}
+
+.allButtons:hover {
+  background-color: #95c2c3;
+  font-size: medium;
+  font-weight: bold
+}
+
+#singleCatPage button {
+  border-radius: 20%;
+  height: 50px;
+  width: 130px;
+  padding: 10px;
+  margin: 5px;
+  color: #006466;
+  font-weight: bold;
+}
+
+#header {
+  width: 96%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  /* row-gap: 500px; */
+  margin: 12px;
+}
+
+.siteNameHeaader {
+  /* font-style: 'Montserrat'; */
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 50px;
+  color: #1f7a8c;
 }
 
 .navLinks {
-  /* padding-top: 20px; */
-  /* border: 10px solid black; */
   font-size: 15px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .navLinkActive {
   text-decoration: none;
-  color: #3c6e71;
+  color: #006466;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .navLinks button:hover{
-  background-color: #cfcfcf;
+  background-color: #95c2c3;
   height: 55px;
   width: 95px;
   font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .navLinks button {
   border-radius: 20%;
   height: 40px;
   width: 80px;
-  padding: 10px;
   margin: 5px;
-  color: #3c6e71;
+  color: #006466;
   font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.helloUser {
+  border: 1px dashed #006466;
+  border-radius: 10%;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.helloUser button {
+  margin-top: -20px;
+  padding: 5px;
+  border-radius: 10%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.helloUser button:hover {
+  background-color: #95c2c3;
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
 }
 
 /* ALL CATS PAGE */
+#allCats{ 
+  margin: 0 auto; 
+}
+
 .allCatsContainer {
   /* border: 1px solid black; */
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(10, 1fr); */
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-    /* margin: 0 auto; */
-  padding-left: 10px;
-  width: 400px;
-
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  padding-left: 100px;
 }
 
 .allCatsDetails {
-  border-radius: 10%;
-  width: 500px;
-  background-color: #a3a3a3;
+  border-radius: 8%;
+  width: 425px;
+  background-color: #d1d3d8;
   text-align: center;
   margin: 10px;
   padding: 5px;
 }
 
-/* .allCatsDetails {
-  width: 500px;
-  width: 500px;
-} */
-
 .allCatsDetails img {
-  max-width: 300px;
-  max-height: 300px;
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
 }
 
+.filterSearch {
+  margin-left: 10%;
+  width: 50%;
+}
 
+.filterSearch input {
+  
+}
 /* 
 SINGLE CAT CSS  */
-.catCardOne img {
-  width: 700px;
-  height: 700px;
+.singleCatPage {
+  justify-content: center;
   margin: 0 auto;
+}
+
+h1, .linkBack {text-align: center}
+
+#singleCatCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.singleCatImg {
+  width: 500px;
+  height: 500px;
+  padding-left: 30%;
+  /* display: inline; */
+  /* overflow: nowrap; */
+  /* margin-right: 25%; */
 }
 /* singleCatDetails & linkBack */
 
+.singleCatDetails {
+  margin-left: 25%;
+  /* position: relative; */
+  text-align: left;
+  justify-content: left;
+  width: 300px;
+  padding-left: 100px;
+}
 
+/* MY CATS PAGE CSS */
+.myCatsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  /* grid-template-rows: repeat(, 1fr); */
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding: 15px;
+  margin-bottom: 25px;
+  margin-left: 10%
+  /* justify-content: center; */
+}
+.myCats {
+  width: 400px;
+  margin: 20px;
+}
+.myCats img { 
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
+}
 /* MAP CSS */
-/* .map {
-  justify-content: center; 
-  position: absolute;
-  bottom: 20%; 
-  left: 10%;
-  padding-left: 20%;
-  line-height: 1;
-} */
-
-
 .mapboxgl-map{
-  /* border: 10px solid orange; */
   position: absolute;
 }
 
 .pageIntro {
   width: 15vw;
-  /* border: 1px solid green; */
   justify-content: center;
   padding-left: 10%;
   padding-top: 70%;
@@ -177,22 +271,28 @@ SINGLE CAT CSS  */
   top: 0;
   right: 0;
   bottom: 0;
+  margin: 0 auto;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
+  border-radius: 20px;
+  background-color: #d1d3d8;
 }
 
-.model-content {
-  /* width: 500px; */
-  background-color: white;
-}
-
-.modal-header, .modal-footer {
+.modal-header, #modal-close {
   padding: 10px;
 }
+
+#modal-close {
+  align-content: right;
+  top: 0;
+  right: 0;
+  color: yellow
+}
+
 .modal-title {
   margin: 0;
 }
@@ -201,9 +301,18 @@ SINGLE CAT CSS  */
   padding: 10px;
 }
 
+.modal-close{
+  top: 0;
+  right: 10px;
+}
+
+.catUpdateForm input{
+  margin: 10px;
+}
+
 /* FORMS */
-.catAdd { 
-  /* border: 1px solid black; */
+.newCatPage { 
+  text-align: center;
 }
 
 .catAddForm {

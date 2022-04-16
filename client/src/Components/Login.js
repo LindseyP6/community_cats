@@ -54,13 +54,13 @@ function toggleEditForm() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button type="submit">Login</button>
+        <button className="allButtons" type="submit">Login</button>
       </form>
 
       {errors?errors.map(e => <div>{e}</div>):null}
 
 
-      <button onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
+      <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
       {formIsShowing ? <Signup /> 
       : null}
     </div>

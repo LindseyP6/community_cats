@@ -9,6 +9,8 @@ import CatContainer from './CatContainer';
 
 import CatCardOne from './CatCardOne';
 import CatAddForm from './CatAddForm';
+import UserProfile from './UserProfile';
+import UserCatsList from "./UserCatsList";
 import FilterCats from './FilterCats';
 
 
@@ -32,17 +34,16 @@ function App() {
       .then((currentUser) => setCurrentUser(currentUser))
   }, [])
 
-  // const cat = catsArray.find(c => {
-  //   if (catId) {
-  //     return c.id === catId
-  //   }else {
-  //     return {}
-  //   }
-  // })
   const searchCats = catsArray.filter((cat) => {
     return cat.name.toLowerCase().includes(searchTerm.toLowerCase())
-    || cat.human_name.includes(searchTerm)
-    || cat.address.includes(searchTerm);
+    || cat.human_name.toLowerCase().includes(searchTerm.toLowerCase())
+    || cat.address.toLowerCase().includes(searchTerm.toLowerCase())
+    || cat.tnr_date.includes(searchTerm)
+    || cat.trap_date.includes(searchTerm)
+    || cat.temperament.toLowerCase().includes(searchTerm.toLowerCase())
+    || cat.description.toLowerCase().includes(searchTerm.toLowerCase())
+    // || cat.gender.toLowerCase() === 'male'.toLowerCase()
+    // || cat.gender.toLowerCase() === 'female'.toLowerCase()
   });
 
     function addNewCat(newCat) {
@@ -63,6 +64,8 @@ function App() {
     setCatsArray(byebyeCat)
   }
 
+  // if (currentUser) const myCats = catsArray.filter(cat => currentUser.id === cat.user_id)
+  const myCatsList = catsArray.filter(cat => cat.user_id === currentUser.id)
 
   //maybe turn this back on
   if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
@@ -74,8 +77,8 @@ function App() {
         currentUser={currentUser}/>
 
       <MapContainer
-        // catsArray={searchCats} 
-        catsArray={catsArray} 
+        catsArray={searchCats}  
+        myCatsList={myCatsList}
         mapToken={mapboxAccessToken} />
       
       <Switch>
@@ -84,21 +87,30 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login setCurrentUser={setCurrentUser} />
+          <Login 
+            setCurrentUser={setCurrentUser} />
+        </Route>
+
+        <Route path="/user-profile">
+          <UserProfile 
+            currentUser={currentUser} />
+          <UserCatsList 
+            myCatsList={myCatsList} />
         </Route>
 
         <Route exact path="/cats/:id">
           <CatCardOne 
             // cat={cat}
-            // catsArray={searchCats} 
+            catsArray={searchCats} 
+            currentUser={currentUser}
             handleCatUpdate={handleCatUpdate} 
-            handleDelete={handleDelete} />
+            handleDelete={handleDelete}
+             />
         </Route>
 
         <Route exact path="/new">
           <CatAddForm 
-            // catsArray={searchCats} 
-            catsArray={catsArray}
+            catsArray={searchCats} 
             addNewCat={addNewCat} 
             currentUser={currentUser} />
         </Route>
@@ -107,10 +119,7 @@ function App() {
           <CatContainer 
             catsArray={searchCats} 
             setCatsArray={setCatsArray} 
-            // catsArray={catsArray}
             currentUser={currentUser} 
-            // handleChangeToMyCats={handleChangeToMyCats} 
-            // handleChangeToAllCats={handleChangeToAllCats}
             searchTerm={searchTerm} 
             setSearchTerm={setSearchTerm} />
         </Route>

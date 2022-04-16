@@ -41,29 +41,38 @@ function EditCatModal(props, handleCatUpdate) {
     <div className="modal">
       <div className="model-content">
         <div className="modal-header">
-          <h4>Edit Cat Form</h4>
+          <h2>Edit Cat Details</h2>
         </div>
         <div className="modal-body">
           <div className="catUpdateForm">
-            Update Your Cat Information
             <form onSubmit={handleEditSubmit} >
               <label>
                 Name:
-                <input name="name" value={name} onChange={handleChange} />
+                <input 
+                  name="name" 
+                  value={name} 
+                  onChange={handleChange} />
               </label>
-              <label>
-                User ID:
-                <input name="name" value={user_id} onChange={handleChange} />
-              </label>
+              <br></br>
 
               <label>
                 Image:
-                <input name="image" value={image} onChange={handleChange} />
+                <input 
+                  name="image" 
+                  value={image} 
+                  onChange={handleChange} />
               </label>
+              <br></br>
+
               <label>
                 Gender:
-                <input name="gender" value={gender} onChange={handleChange} />
+                <input 
+                  name="gender" 
+                  value={gender} 
+                  onChange={handleChange} />
               </label>
+              <br></br>
+
               <label>
                 Description:
                 <input
@@ -72,6 +81,8 @@ function EditCatModal(props, handleCatUpdate) {
                   onChange={handleChange}
                 />
               </label>
+              <br></br>
+
               <label>
                 Temperament:
                 <input
@@ -80,6 +91,8 @@ function EditCatModal(props, handleCatUpdate) {
                   onChange={handleChange}
                 />
               </label>
+              <br></br>
+
               <label>
                 TNR Status:
                 <input
@@ -88,6 +101,8 @@ function EditCatModal(props, handleCatUpdate) {
                   onChange={handleChange}
                 />
               </label>
+              <br></br>
+
               <label>
                 TNR Date:
                 <input
@@ -96,6 +111,8 @@ function EditCatModal(props, handleCatUpdate) {
                   onChange={handleChange}
                 />
               </label>
+              <br></br>
+
               <label>
                 Trap Date:
                 <input
@@ -103,7 +120,8 @@ function EditCatModal(props, handleCatUpdate) {
                   value={trap_date}
                   onChange={handleChange}
                 />
-              </label>
+              </label><br></br>
+
               <label>
                 Special Notes:
                 <input
@@ -112,6 +130,9 @@ function EditCatModal(props, handleCatUpdate) {
                   onChange={handleChange}
                 />
               </label>
+              <br></br>
+<span>
+
               <button
                 type="submit"
                 name="submit"
@@ -120,11 +141,10 @@ function EditCatModal(props, handleCatUpdate) {
               >
                 <strong>Enter!</strong>
               </button>
+               <button id="modal-close" onClick={props.onClose}>Close</button>
+            </span>
             </form>
           </div>
-        </div>
-        <div className="modal-footer">
-          <button onClick={props.onClose}>Close</button>
         </div>
       </div>
     </div>

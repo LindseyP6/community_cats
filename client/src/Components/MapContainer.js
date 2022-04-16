@@ -5,15 +5,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // import Geocoder from "react-map-gl-geocoder";
 import { IoLogoOctocat } from "react-icons/io";
 
-// import { FaCat } from "react-icons/fa";
-// import { GiCat } from "react-icons/gi";
-
-function MapContainer({catsArray, mapToken}) {
+function MapContainer({catsArray, mapToken, myCatsList}) {
   const [selectedCat, setSelectedCat] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: 40.611401,
     longitude: -74.005630,
-    zoom: 14,
+    zoom: 15,
     height: "70vh",
     width: "80vw",
     padding: "50px"

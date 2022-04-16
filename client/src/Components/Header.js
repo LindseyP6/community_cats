@@ -12,10 +12,11 @@ function Header({setCurrentUser, currentUser}) {
     })
 }
 
-console.log("header", currentUser.name)
+// console.log("header", currentUser.name)
 
   return (
-    <div className="header">
+    // <div id="top-bar">
+    <div id="header">
       <div className="navLinks">
         <button>
           <NavLink exact to="/" className="navLinkActive"> Home </NavLink>  
@@ -36,13 +37,16 @@ console.log("header", currentUser.name)
       </div>
 
       <div className='siteNameHeaader'>Community Cat Catalog</div>
-
       <div className="helloUser">
-        {currentUser ? <h4>Hello {currentUser.name}</h4> : null}
+        {currentUser ? <p>Hello {currentUser.name}</p> : null}
+        <button>
+          <NavLink exact to="/user-profile" className="navLinkActive"> My Profile </NavLink>  
+        </button>
       </div>
       
-
     </div>
+
+    // </div>
   )
 }
 

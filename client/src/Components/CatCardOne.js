@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {useParams, Link, useHistory} from 'react-router-dom';
 import EditCatModal from './EditCatModal';
 
-function CatCardOne({handleCatUpdate, handleDelete}) {
+function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   const [cat, setCat] = useState({});
-  const [formIsShowing, setFormIsShowing] = useState(false)
   const [show, setShow] = useState(false);
   const history = useHistory();
   const {id} = useParams()
-
+  
   useEffect(() => {
     fetch(`/cats/${id}`)
         .then(r => r.json())
@@ -23,38 +22,90 @@ function CatCardOne({handleCatUpdate, handleDelete}) {
   }
 
   function handleDeleteClick(){
-    handleDelete(id)
-    handleDeleteFromDatabase()
-    history.push('/cats')
-    history.go(0)
+    if (currentUser.id === cat.user_id) {
+      handleDelete(id)
+      handleDeleteFromDatabase()
+      history.push('/cats')
+      history.go(0)
+    } else {
+      return window.alert("Not your cat to delete!")
+    }
   }
 
-  const {name, image, description, tnr_status, temperament, gender, human_name } = cat;
+  function handleModalClick(){
+    if (currentUser.id === cat.user_id){
+      setShow(true)
+    } else {
+      return window.alert("Not your cat to edit!")
+    }
+  }
+
+  const {name, image, description, tnr_status, temperament, gender, human_name, trap_date, tnr_date, special_notes } = cat;
   return (
-    <div className="catCardOne">
+    <div id="singleCatPage">
       <div className="linkBack">
         <Link to={`/cats`}>
-          <button>Back to All Cats</button>
-        </Link>  
+          <button className="allButtons">All Cats</button>
+        </Link>
       </div>
-      <div className="singleCatDetails">
-        <h2>{name}</h2>
-        <img src={image} alt={name}/>
-        <li><strong>Gender: </strong>{gender}</li>
-        <li><strong>Description: </strong>{description}</li>
-        <li><strong>Temperment: </strong>{temperament}</li>
-        <li><strong>TNR Status: </strong> {tnr_status}</li>
-        <li><strong>Human Caretaker: </strong>{human_name}</li>
+      <h1>{name}</h1>
+      <div id="singleCatCard">
+        <img className="singleCatImg" src={image} alt={name} />
+        <div className="singleCatDetails">
+          <p>
+            <strong>Gender: </strong>
+            {gender}
+          </p>
+          <p>
+            <strong>Description: </strong>
+            {description}
+          </p>
+          <p>
+            <strong>Temperment: </strong>
+            {temperament}
+          </p>
+          <p>
+            <strong>TNR Status: </strong> {tnr_status}
+          </p>
+          <p>
+            <strong>TNR Date: </strong> {tnr_date}
+          </p>
+          <p>
+          <p>
+            <strong>Trap Date: </strong> {trap_date}
+          </p>
+            <strong>Special Notes: </strong>
+            {special_notes}
+          </p>
+          <p>
+            <strong>Human Caretaker: </strong>
+            {human_name}
+          </p>
+
+          {currentUser.id === cat.user_id ? (
+            <div>
+              <button className="allButtons" onClick={handleDeleteClick}>
+                Remove Cat
+              </button>
+
+              <button className="allButtons" onClick={handleModalClick}>
+                Edit Cat
+              </button>
+              <EditCatModal
+                onClose={() => setShow(false)}
+                handleCatUpdate={handleCatUpdate}
+                show={show}
+              />
+            </div>
+          ) : null}
+          {/* <button className="allButtons" onClick={handleDeleteClick}>Delete Cat</button>
+
+          <button className="allButtons" onClick={handleModalClick}>Edit Cat</button>
+          <EditCatModal onClose={() => setShow(false)} handleCatUpdate={handleCatUpdate} show={show}/>  */}
+        </div>
       </div>
-
-      <button onClick={handleDeleteClick}>Delete</button>
-      {/* onClick={() => handleDelete(id)} */}
-
-      <button onClick={() => setShow(true)}>Modal</button>
-      <EditCatModal onClose={() => setShow(false)} handleCatUpdate={handleCatUpdate} show={show}/> 
-
     </div>
-  )
+  );
 }
 
 export default CatCardOne
