@@ -14,6 +14,12 @@ class InteractionsController < ApplicationController
         render json: interaction, status: :created
     end
 
+    def update
+        interaction = Interaction.find(params[:id])
+        interaction.update!(interaction_params)
+        render json: interaction, status: :accepted
+    end
+
     def destroy
         interaction = Interaction.find(params[:id])
         interaction.destroy

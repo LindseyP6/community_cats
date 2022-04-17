@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, Link, useHistory} from 'react-router-dom';
 import EditCatModal from './EditCatModal';
+import Comments from './Comments';
 
 function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   const [cat, setCat] = useState({});
@@ -22,22 +23,12 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   }
 
   function handleDeleteClick(){
-    if (currentUser.id === cat.user_id) {
       handleDelete(id)
       handleDeleteFromDatabase()
-      history.push('/cats')
-      history.go(0)
-    } else {
-      return window.alert("Not your cat to delete!")
-    }
   }
 
   function handleModalClick(){
-    if (currentUser.id === cat.user_id){
       setShow(true)
-    } else {
-      return window.alert("Not your cat to edit!")
-    }
   }
 
   const {name, image, description, tnr_status, temperament, gender, human_name, trap_date, tnr_date, special_notes } = cat;
@@ -98,12 +89,9 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
               />
             </div>
           ) : null}
-          {/* <button className="allButtons" onClick={handleDeleteClick}>Delete Cat</button>
-
-          <button className="allButtons" onClick={handleModalClick}>Edit Cat</button>
-          <EditCatModal onClose={() => setShow(false)} handleCatUpdate={handleCatUpdate} show={show}/>  */}
         </div>
       </div>
+      <Comments />
     </div>
   );
 }

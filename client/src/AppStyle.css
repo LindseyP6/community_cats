@@ -341,3 +341,8 @@ h1, .linkBack {text-align: center}
 .hiddenUserField {
   display: none;
 }
+
+#commentContainer {
+  text-align: center;
+  margin: 10px;
+}
