@@ -61,6 +61,7 @@ function MapContainer({catsArray, mapToken, myCatsList}) {
               setSelectedCat(cat);
             }}
           >
+          {/* <img width="30px" height="30px" className="markerIcom" src={cat.image} alt = "skatepark icon"/> */}
             <IoLogoOctocat className="markerIcon"/>
           </button>
         </Marker>
@@ -75,7 +76,7 @@ function MapContainer({catsArray, mapToken, myCatsList}) {
           >
             <div className="popUpContent">
               <h3>{selectedCat.name}</h3>
-              {/* <p><img src="../images/spooky.jpeg" alt={selectedCat.name} width="50px"/></p> */}
+              <p><img src={selectedCat.image} alt={selectedCat.name} width="100px"/></p>
               <li><strong>Temperament: </strong>{selectedCat.temperament}</li>
               <li><strong>Caretaker: </strong> {selectedCat.human_name}</li>
               <li><Link to={`/cats/${selectedCat.id}`}>See Details</Link></li>

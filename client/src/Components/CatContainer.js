@@ -21,8 +21,8 @@ function CatContainer({catsArray, setCatsArray, currentUser, setSearchTerm, sear
           setSearchTerm={setSearchTerm} 
           searchTerm={searchTerm} 
           catCards={catCards}/>
-      </div>
       <h1>Meet All Of Our Cats!</h1>
+      </div>
       <div className="allCatsContainer">
         {catCards}
       </div>

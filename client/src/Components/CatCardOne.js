@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, Link, useHistory} from 'react-router-dom';
 import EditCatModal from './EditCatModal';
-import Comments from './Comments';
+import Comments from './CommentContainer';
 
 function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   const [cat, setCat] = useState({});
@@ -99,7 +99,9 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
           ) : null}
         </div>
       </div>
-      <Comments />
+      <Comments 
+        cat={cat}
+        currentUser={currentUser}/>
     </div>
   );
 }

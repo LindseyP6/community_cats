@@ -1,14 +1,11 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import Signup from './SignupOld'
-import Signup2 from './Signup';
-import EditCatModal from './EditCatModal';
+import Signup from './Signup';
 
 function Login({setCurrentUser}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([])
-  const [formIsShowing, setFormIsShowing] = useState(false)
+  const [errors, setErrors] = useState([]);
   const history = useHistory();
   const [show, setShow] = useState(false);
 
@@ -30,11 +27,6 @@ function Login({setCurrentUser}) {
         // if(user.errors) setErrors(user.errors)
     })
     history.push(`/home`)
-}
-
-
-function toggleEditForm() {
-  setFormIsShowing((formIsShowing) => !formIsShowing);
 }
 
 function handleSignupModal(){
@@ -69,38 +61,13 @@ function handleSignupModal(){
         </div>
 
         <div className="signInToggle">
-          {/* <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button> */}
-          {/* {formIsShowing ? <Signup /> 
-          : null} */}
-
-          {/* <button className="allButtons" onClick={handleSignupModal}>New to Community Cat Catalog? Sign up here!</button>
-          <Signup 
-            show={show}
+          <button className="allButtons" onClick={handleSignupModal}>New to Community Cat Catalog? Sign up here!</button> 
+          <Signup
             onClose={() => setShow(false)}
-            /> */}
-
-<button className="allButtons" onClick={handleSignupModal}>New to Community Cat Catalog? Sign up here!</button> 
-<Signup2
-onClose={() => setShow(false)}
-// handleCatUpdate={handleCatUpdate}
-show={show}
-/>
+            show={show}/>
         </div>
     </div>
   );
 }
 
 export default Login
-
-// function handleModalClick(){
-//   setShow(true)
-// }
-
-// <button className="allButtons" onClick={handleModalClick}>
-// Edit Cat
-// </button>
-// <EditCatModal
-// onClose={() => setShow(false)}
-// handleCatUpdate={handleCatUpdate}
-// show={show}
-// />

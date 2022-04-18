@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import {useHistory} from "react-router-dom"
 
-function CatAddForm({ catsArray, addNewCat, currentUser }) {
-  const [formState, setFormState] = useState({});
+function CatAddForm({ addNewCat, currentUser }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [gender, setGender] = useState("");

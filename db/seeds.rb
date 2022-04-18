@@ -175,7 +175,7 @@ Cat.create(
 )
 Cat.create(
     name: "Bonnie C.",
-    image: "../images/ally.jpeg",
+    image: "https://live.staticflickr.com/65535/52012677867_3316d85449_h.jpg",
     gender: "female",
     # latitude: 
     # longitude: 
