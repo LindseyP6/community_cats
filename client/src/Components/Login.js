@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
-import Signup from './Signup'
+import Signup from './SignupOld'
+import Signup2 from './Signup';
+import EditCatModal from './EditCatModal';
 
 function Login({setCurrentUser}) {
   const [email, setEmail] = useState("");
@@ -8,6 +10,7 @@ function Login({setCurrentUser}) {
   const [errors, setErrors] = useState([])
   const [formIsShowing, setFormIsShowing] = useState(false)
   const history = useHistory();
+  const [show, setShow] = useState(false);
 
   function handleLoginSubmit(e){
     e.preventDefault()
@@ -32,6 +35,10 @@ function Login({setCurrentUser}) {
 
 function toggleEditForm() {
   setFormIsShowing((formIsShowing) => !formIsShowing);
+}
+
+function handleSignupModal(){
+  setShow(true)
 }
 
   return (
@@ -60,14 +67,40 @@ function toggleEditForm() {
         {errors?errors.map(e => <div>{e}</div>):null}
 
         </div>
-        
+
         <div className="signInToggle">
-          <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
-          {formIsShowing ? <Signup /> 
-          : null}
+          {/* <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button> */}
+          {/* {formIsShowing ? <Signup /> 
+          : null} */}
+
+          {/* <button className="allButtons" onClick={handleSignupModal}>New to Community Cat Catalog? Sign up here!</button>
+          <Signup 
+            show={show}
+            onClose={() => setShow(false)}
+            /> */}
+
+<button className="allButtons" onClick={handleSignupModal}>New to Community Cat Catalog? Sign up here!</button> 
+<Signup2
+onClose={() => setShow(false)}
+// handleCatUpdate={handleCatUpdate}
+show={show}
+/>
         </div>
     </div>
   );
 }
 
 export default Login
+
+// function handleModalClick(){
+//   setShow(true)
+// }
+
+// <button className="allButtons" onClick={handleModalClick}>
+// Edit Cat
+// </button>
+// <EditCatModal
+// onClose={() => setShow(false)}
+// handleCatUpdate={handleCatUpdate}
+// show={show}
+// />

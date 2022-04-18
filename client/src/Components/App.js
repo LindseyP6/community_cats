@@ -77,31 +77,14 @@ function App() {
         setCurrentUser={setCurrentUser}
         currentUser={currentUser}/>
 
-      {/* <MapContainer
-        catsArray={searchCats}  
-        // myCatsList={myCatsList}
-        mapToken={mapboxAccessToken} /> */}
-
-      {/* <CatContainer 
-        to="/cats#all-cats"
-        catsArray={searchCats} 
-        setCatsArray={setCatsArray} 
-        currentUser={currentUser} 
-        searchTerm={searchTerm} 
-        setSearchTerm={setSearchTerm} />
-       */}
        
       <Switch>
-        <Route path="/signup">
-          <Signup />
-        </Route>
 
         <Route path="/home">
-        <MapContainer
-        catsArray={searchCats}  
-        // myCatsList={myCatsList}
-        mapToken={mapboxAccessToken} />
-                  <CatContainer 
+          <MapContainer
+            catsArray={searchCats}  
+            mapToken={mapboxAccessToken} />
+          <CatContainer 
             catsArray={searchCats} 
             setCatsArray={setCatsArray} 
             currentUser={currentUser} 
@@ -109,24 +92,16 @@ function App() {
             setSearchTerm={setSearchTerm} />
         </Route>
 
-        {/* <Route path="/login">
-          <Login 
-            setCurrentUser={setCurrentUser} />
-        </Route> */}
-
         <Route path="/user-profile">
           <UserProfile 
             currentUser={currentUser} />
           <UserCatsList 
           catsArray={catsArray}
-          currentUser={currentUser}
-            // myCatsList={myCatsList}
-             />
+          currentUser={currentUser} />
         </Route>
 
         <Route exact path="/cats/:id">
           <CatCardOne 
-            // cat={cat}
             catsArray={searchCats} 
             currentUser={currentUser}
             handleCatUpdate={handleCatUpdate} 
@@ -140,19 +115,6 @@ function App() {
             addNewCat={addNewCat} 
             currentUser={currentUser} />
         </Route>
-
-        {/* <Route exact path="/cats">
-          <MapContainer
-          catsArray={searchCats}  
-          // myCatsList={myCatsList}
-          mapToken={mapboxAccessToken} />
-          <CatContainer 
-            catsArray={searchCats} 
-            setCatsArray={setCatsArray} 
-            currentUser={currentUser} 
-            searchTerm={searchTerm} 
-            setSearchTerm={setSearchTerm} />
-        </Route> */}
 
         <Route path="/">
           <Login 

@@ -2,7 +2,7 @@
   /* text-align: center; */
   /* font-family: 'Quattrocento Sans', sans-serif; */
   /* font-family: 'Six Caps', sans-serif; */
-  font-family: 'Space Mono', monospace;
+  /* font-family: 'Space Mono', monospace, 'Helvetica Neue'; */
 
   /* font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; */
 }
@@ -16,8 +16,13 @@ li {
   padding: 2px;
 }
 
-h1, h2, h3, h4, label{
+p {
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, label {
   color: #16525b;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .allButtons {
@@ -67,26 +72,26 @@ h1, h2, h3, h4, label{
   font-family: 'Roboto Mono', monospace;
 }
 
-.navLinkActive {
+.navLinkActive, .userNavLinks {
   text-decoration: none;
   color: #006466;
   font-family: 'Roboto Mono', monospace;
 }
 
-.navLinks button:hover{
-  background-color: #95c2c3;
-  height: 55px;
-  width: 95px;
+.navLinks button, .userNavLinks button {
+  border-radius: 20%;
+  height: 40px;
+  width: 120px;
+  margin: 5px;
+  color: #006466;
   font-weight: bold;
   font-family: 'Roboto Mono', monospace;
 }
 
-.navLinks button {
-  border-radius: 20%;
-  height: 40px;
-  width: 80px;
-  margin: 5px;
-  color: #006466;
+.navLinks button:hover, .userNavLinks button:hover{
+  background-color: #95c2c3;
+  height: 55px;
+  width: 145px;
   font-weight: bold;
   font-family: 'Roboto Mono', monospace;
 }
@@ -135,7 +140,7 @@ h1, h2, h3, h4, label{
   background-color: #d1d3d8;
   text-align: center;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .allCatsDetails img {
@@ -174,13 +179,9 @@ h1, .linkBack {text-align: center}
 
 .singleCatImg {
   width: 500px;
-  height: 500px;
+  height: 450px;
   padding-left: 30%;
-  /* display: inline; */
-  /* overflow: nowrap; */
-  /* margin-right: 25%; */
 }
-/* singleCatDetails & linkBack */
 
 .singleCatDetails {
   margin-left: 25%;
@@ -279,6 +280,7 @@ h1, .linkBack {text-align: center}
   justify-content: center;
   width: 700px;
   height: 700px;
+  /* display: inline-block; */
   border-radius: 20px;
   background-color: #d1d3d8;
 }
@@ -289,9 +291,8 @@ h1, .linkBack {text-align: center}
 
 #modal-close {
   align-content: right;
-  top: 0;
-  right: 0;
-  color: yellow
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .modal-title {
@@ -307,7 +308,7 @@ h1, .linkBack {text-align: center}
   right: 10px;
 }
 
-.catUpdateForm input{
+.catUpdateForm input, .signupForm input{
   margin: 10px;
 }
 

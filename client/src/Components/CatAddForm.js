@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom"
 
 function CatAddForm({ catsArray, addNewCat, currentUser }) {
   const [formState, setFormState] = useState({});
@@ -13,6 +14,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
   const [special_notes, setSpecial_notes] = useState("");
   const [user_id, setUser_id] = useState("");
   const [address, setAddress] = useState("");
+  const history= useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,8 +39,7 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
       body: JSON.stringify(newCat),
     })
       .then((r) => r.json())
-      .then((data) => addNewCat(data));
-      console.log(newCat)
+      .then((cat) => addNewCat(cat));
     setName("");
     setImage("");
     setGender("");
@@ -49,13 +50,14 @@ function CatAddForm({ catsArray, addNewCat, currentUser }) {
     setTrap_date("");
     setSpecial_notes("");
     setAddress("");
+    history.push(`/home`)
   }
 
   return (
     <div className="newCatPage">
 
       <form onSubmit={handleSubmit}>
-      ADD A NEW CAT
+      <h1>ADD A NEW CAT</h1>
       <br></br>
         <div className="catAddForm">
           <label>

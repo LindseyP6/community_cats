@@ -21,15 +21,15 @@ function Header({setCurrentUser, currentUser}) {
     <div id="header">
       <div className="navLinks">
         <button>
-          <NavLink exact to="/home" className="navLinkActive"> Home </NavLink>  
+          <NavLink exact to="/home" className="navLinkActive"> Cat-Map </NavLink>  
         </button>
-
+{/* 
         <button>
           <NavLink exact to="/cats" className="navLinkActive">All Cats</NavLink>
-        </button>
+        </button> */}
 
         <button>
-          <NavLink exact to="/new" className="navLinkActive">Add Cat!</NavLink>
+          <NavLink exact to="/new" className="navLinkActive">Add Cats!</NavLink>
         </button>
 
         {/* <Link to={`/login`}>
@@ -41,10 +41,10 @@ function Header({setCurrentUser, currentUser}) {
       <div className="helloUser">
         {currentUser ? <p>Hello {currentUser.name}</p> : null}
         <button>
-          <NavLink exact to="/user-profile" className="navLinkActive"> My Profile </NavLink>  
+          <NavLink exact to="/user-profile" className="userNavLinks"> My Profile </NavLink>  
         </button>
         {/* <br></br> */}
-        <button className="navLinkActive" onClick={logout}>Logout</button>
+        <button className="userNavLinks" onClick={logout}>Logout</button>
       </div>
       
     </div>

@@ -20,6 +20,7 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
     fetch(`/cats/${id}`, {
       method: "DELETE",
     })
+    history.push(`/home`)
   }
 
   function handleDeleteClick(){
@@ -34,11 +35,18 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   const {name, image, description, tnr_status, temperament, gender, human_name, trap_date, tnr_date, special_notes } = cat;
   return (
     <div id="singleCatPage">
-      <div className="linkBack">
+      <div className="linksBack">
         <Link to={`/home`}>
           <button className="allButtons">All Cats</button>
         </Link>
+
+        {currentUser.id === cat.user_id ? (
+          <Link to={`/user-profile`}>
+            <button className="allButtons">My Cats</button>
+          </Link>) 
+        :null}
       </div>
+
       <h1>{name}</h1>
       <div id="singleCatCard">
         <img className="singleCatImg" src={image} alt={name} />
