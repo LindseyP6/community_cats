@@ -101,6 +101,7 @@ h1, h2, h3, h4, label{
 
 .helloUser button {
   margin-top: -20px;
+  margin-left: 5px;
   padding: 5px;
   border-radius: 10%;
   font-family: 'Roboto Mono', monospace;
@@ -345,4 +346,30 @@ h1, .linkBack {text-align: center}
 #commentContainer {
   text-align: center;
   margin: 10px;
+}
+
+.profileStats {
+  padding-left: 30%;
+  padding-bottom: 100px;
+}
+
+.profileStats {
+  /* float: left; */
+}
+
+#loginPage {
+  display: inline-block;
+  border: 1px dashed green;
+  border-radius: 8%;
+  margin-left: 0 auto;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+
+.loginOrSignUp {
+  padding: 20px;
+}
+
+.signInToggle { 
+  margin-left: 11%;
 }

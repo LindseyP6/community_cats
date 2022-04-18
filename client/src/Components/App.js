@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import '../AppStyle.css';
 import Header from './Header';
 import Login from './Login';
@@ -65,7 +66,7 @@ function App() {
   }
 
   // if (currentUser) const myCats = catsArray.filter(cat => currentUser.id === cat.user_id)
-  const myCatsList = catsArray.filter(cat => cat.user_id === currentUser.id)
+  // const myCatsList = catsArray.filter(cat => cat.user_id === currentUser.id)
 
   //maybe turn this back on
   if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
@@ -76,26 +77,51 @@ function App() {
         setCurrentUser={setCurrentUser}
         currentUser={currentUser}/>
 
-      <MapContainer
+      {/* <MapContainer
         catsArray={searchCats}  
-        myCatsList={myCatsList}
-        mapToken={mapboxAccessToken} />
-      
+        // myCatsList={myCatsList}
+        mapToken={mapboxAccessToken} /> */}
+
+      {/* <CatContainer 
+        to="/cats#all-cats"
+        catsArray={searchCats} 
+        setCatsArray={setCatsArray} 
+        currentUser={currentUser} 
+        searchTerm={searchTerm} 
+        setSearchTerm={setSearchTerm} />
+       */}
+       
       <Switch>
         <Route path="/signup">
           <Signup />
         </Route>
 
-        <Route path="/login">
+        <Route path="/home">
+        <MapContainer
+        catsArray={searchCats}  
+        // myCatsList={myCatsList}
+        mapToken={mapboxAccessToken} />
+                  <CatContainer 
+            catsArray={searchCats} 
+            setCatsArray={setCatsArray} 
+            currentUser={currentUser} 
+            searchTerm={searchTerm} 
+            setSearchTerm={setSearchTerm} />
+        </Route>
+
+        {/* <Route path="/login">
           <Login 
             setCurrentUser={setCurrentUser} />
-        </Route>
+        </Route> */}
 
         <Route path="/user-profile">
           <UserProfile 
             currentUser={currentUser} />
           <UserCatsList 
-            myCatsList={myCatsList} />
+          catsArray={catsArray}
+          currentUser={currentUser}
+            // myCatsList={myCatsList}
+             />
         </Route>
 
         <Route exact path="/cats/:id">
@@ -115,13 +141,22 @@ function App() {
             currentUser={currentUser} />
         </Route>
 
-        <Route exact path="/cats">
+        {/* <Route exact path="/cats">
+          <MapContainer
+          catsArray={searchCats}  
+          // myCatsList={myCatsList}
+          mapToken={mapboxAccessToken} />
           <CatContainer 
             catsArray={searchCats} 
             setCatsArray={setCatsArray} 
             currentUser={currentUser} 
             searchTerm={searchTerm} 
             setSearchTerm={setSearchTerm} />
+        </Route> */}
+
+        <Route path="/">
+          <Login 
+            setCurrentUser={setCurrentUser} />
         </Route>
 
       </Switch>

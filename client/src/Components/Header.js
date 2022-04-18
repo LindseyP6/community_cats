@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink, Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 
 function Header({setCurrentUser, currentUser}) {
 
@@ -19,7 +21,7 @@ function Header({setCurrentUser, currentUser}) {
     <div id="header">
       <div className="navLinks">
         <button>
-          <NavLink exact to="/" className="navLinkActive"> Home </NavLink>  
+          <NavLink exact to="/home" className="navLinkActive"> Home </NavLink>  
         </button>
 
         <button>
@@ -30,10 +32,9 @@ function Header({setCurrentUser, currentUser}) {
           <NavLink exact to="/new" className="navLinkActive">Add Cat!</NavLink>
         </button>
 
-        <Link to={`/login`}>
+        {/* <Link to={`/login`}>
           <button>Login</button>
-        </Link>  
-        <button onClick={logout}>Logout</button>
+        </Link>   */}
       </div>
 
       <div className='siteNameHeaader'>Community Cat Catalog</div>
@@ -42,6 +43,8 @@ function Header({setCurrentUser, currentUser}) {
         <button>
           <NavLink exact to="/user-profile" className="navLinkActive"> My Profile </NavLink>  
         </button>
+        {/* <br></br> */}
+        <button className="navLinkActive" onClick={logout}>Logout</button>
       </div>
       
     </div>

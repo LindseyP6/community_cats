@@ -92,8 +92,8 @@ Cat.create(
     description: "All black with yellow eyes",
     temperament: "Cautious, calm, gets along with other cats",
     tnr_status: "Yes",
-    trap_date: "10-10-2020",
-    tnr_date: "10-9-2020",
+    trap_date: "10-9-2020",
+    tnr_date: "10-10-2020",
     special_notes: "Pregnant",
     user_id: User.all.sample.id,
     address: "1604 83rd Street, Brooklyn, NY 11214"

@@ -6,11 +6,6 @@ class UsersController < ApplicationController
         render json: users
     end
 
-    # def me
-    #     current_user = User.find(session[:user_id])
-    #     render json: current_user, status: :ok
-    # end 
-
     def me
         render json: current_user, status: :ok
     end

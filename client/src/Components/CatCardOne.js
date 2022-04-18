@@ -35,7 +35,7 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
   return (
     <div id="singleCatPage">
       <div className="linkBack">
-        <Link to={`/cats`}>
+        <Link to={`/home`}>
           <button className="allButtons">All Cats</button>
         </Link>
       </div>

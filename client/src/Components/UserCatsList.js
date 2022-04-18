@@ -1,12 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function UserCatsList({myCatsList}) {
+function UserCatsList({catsArray, currentUser}) {
+
+const myCats = catsArray.filter(cat => cat.user_id === currentUser.id)
+
   return (
     <div>
         <h1>My Cats</h1>
         <div className="myCatsContainer">
-            {myCatsList.map(cat => {
+            {myCats.map(cat => {
             return (
             <div className="myCats">
                 <img src={cat.image} alt={cat.name}/>

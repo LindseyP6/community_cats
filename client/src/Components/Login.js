@@ -26,7 +26,7 @@ function Login({setCurrentUser}) {
         setCurrentUser(user)
         // if(user.errors) setErrors(user.errors)
     })
-    history.push(`/`)
+    history.push(`/home`)
 }
 
 
@@ -35,34 +35,37 @@ function toggleEditForm() {
 }
 
   return (
-    <div className="login">
-      <form 
-      onSubmit={handleLoginSubmit}
-      >
-        <label>Email: 
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+    <div id="loginPage">
+      <h1>Community Cat Catalog</h1>
+      <div className="loginOrSignUp">
+        <form onSubmit={handleLoginSubmit}>
+          <label>Email: 
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
 
-        <label>Password: 
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button className="allButtons" type="submit">Login</button>
-      </form>
+          <label>Password: 
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label>
+          <button className="allButtons" type="submit">Login</button>
+        </form>
 
-      {errors?errors.map(e => <div>{e}</div>):null}
+        {errors?errors.map(e => <div>{e}</div>):null}
 
-
-      <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
-      {formIsShowing ? <Signup /> 
-      : null}
+        </div>
+        
+        <div className="signInToggle">
+          <button className="allButtons" onClick={toggleEditForm}>New to Community Cat Catalog? Sign up here!</button>
+          {formIsShowing ? <Signup /> 
+          : null}
+        </div>
     </div>
   );
 }

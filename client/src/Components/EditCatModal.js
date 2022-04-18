@@ -131,8 +131,7 @@ function EditCatModal(props, handleCatUpdate) {
                 />
               </label>
               <br></br>
-<span>
-
+            <span>
               <button
                 type="submit"
                 name="submit"
