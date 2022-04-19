@@ -39,7 +39,7 @@ h1, h2, h3, h4, label {
   font-weight: bold
 }
 
-#singleCatPage button {
+#singleCatPageButton {
   border-radius: 20%;
   height: 50px;
   width: 130px;
@@ -47,6 +47,7 @@ h1, h2, h3, h4, label {
   margin: 5px;
   color: #006466;
   font-weight: bold;
+  font-size: 16px;
 }
 
 #header {
@@ -143,9 +144,11 @@ h1, h2, h3, h4, label {
   padding: 10px;
 }
 
+.allCatsDetails li { padding: 8px;}
+
 .allCatsDetails img {
-  width: 300px;
-  height: 300px;
+  width: 325px;
+  height: 350px;
   border-radius: 20%;
 }
 
@@ -288,9 +291,14 @@ h1, .linksBack {text-align: center}
 }
 
 #modal-close {
-  align-content: right;
+  border-radius: 10%;
+  margin: 5px;
   font-weight: bold;
-  border-radius: 10px;
+  background-color: #ecedf2;
+}
+#modal-close:hover {
+  background-color: #95c2c3;
+  font-size: medium;
 }
 
 .modal-title {
@@ -373,12 +381,28 @@ h1, .linksBack {text-align: center}
   margin-left: 11%;
 }
 
+.comments {
+  display: inline-block;
+  max-width: 750px;
+  /* border: 1px solid #94d2bd; */
+  border-radius: 10%;
+  padding: 20px;
+  background-color: #d1d3d8;
+}
+
+.commentDiv {
+  border-bottom: 1px dashed black;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .commentForm {
   border: 1px solid #94d2bd;
   border-radius: 10%;
+  padding: 40px;
+  margin-top: 20px;  
   display: inline-block;
-  padding: 20px;
-  margin-top: 20px;
 }
 
 .commentForm input{
@@ -388,6 +412,17 @@ h1, .linksBack {text-align: center}
 
 #addCommentButton {
   background-color: #94d2bd;
+  color: #16525b;
+  border-radius: 10%;
+  padding: 10px;
   font-size: 16px;
-  padding-bottom: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+#addCommentButton:hover {
+  color: #16525b;
+  background-color: yellow;
+  font-size: medium;
+  font-weight: bold
 }

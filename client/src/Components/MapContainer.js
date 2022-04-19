@@ -10,7 +10,7 @@ function MapContainer({catsArray, mapToken, myCatsList}) {
   const [viewport, setViewport] = useState({
     latitude: 40.611401,
     longitude: -74.005630,
-    zoom: 15,
+    zoom: 16,
     height: "70vh",
     width: "80vw",
     padding: "50px"

@@ -15,15 +15,22 @@ function Comments({cat, currentUser}) {
     setToggle((toggle) => !toggle);
   }
 
-  const catComments = comments.map(comment => {if (comment.cat_id === cat.id) return <p>"{comment.comment}" - <strong>{comment.human_name}</strong></p>})
+  const catComments = comments.map(comment => {if (comment.cat_id === cat.id) return (<div className="commentDiv"> 
+    <span><p> <strong>{comment.human_name} </strong> </p>
+    <p style={{ fontSize: "small" }}>{comment.time_stamp}</p> </span>
+    <p style={{ float: "top" }}>"{comment.comment}" <br></br>
+    </p>
+    </div>) })
 
   return (
     <div id="commentContainer">
-      <h1>Comments</h1>
       <div className="comments">
+      <h1>Cat Comments</h1>
         {catComments}
       </div>
-      <button id="addCommentButton" onClick={handleToggle}>Add A Comment</button> 
+      <br></br>
+      <br></br>
+      <button id="addCommentButton" onClick={handleToggle}>Add Comment</button> 
       <br></br>
       {toggle ? <CommentAddForm comments={comments} setComments={setComments} currentUser={currentUser} cat={cat}/> : null}
     </div>

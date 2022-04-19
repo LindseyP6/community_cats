@@ -4,6 +4,10 @@ class Cat < ApplicationRecord
     geocoded_by :address
     after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
+    validates :address, presence: true
+    validates :name, presence: true
+    validates :description, presence: true
+    
     def convert_address_to_coordinates
         results = Geocoder.search(self.address)
         results.first.coordinates

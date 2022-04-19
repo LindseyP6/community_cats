@@ -104,6 +104,15 @@ function EditCatModal(props, handleCatUpdate) {
               <br></br>
 
               <label>
+                Trap Date:
+                <input
+                  name="trap_date"
+                  value={trap_date}
+                  onChange={handleChange}
+                />
+              </label><br></br>
+
+              <label>
                 TNR Date:
                 <input
                   name="tnr_date"
@@ -112,15 +121,6 @@ function EditCatModal(props, handleCatUpdate) {
                 />
               </label>
               <br></br>
-
-              <label>
-                Trap Date:
-                <input
-                  name="trap_date"
-                  value={trap_date}
-                  onChange={handleChange}
-                />
-              </label><br></br>
 
               <label>
                 Special Notes:
@@ -136,7 +136,7 @@ function EditCatModal(props, handleCatUpdate) {
                 type="submit"
                 name="submit"
                 value="Join!"
-                className="submit"
+                className="allButtons"
               >
                 <strong>Enter!</strong>
               </button>

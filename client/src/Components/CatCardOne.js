@@ -83,11 +83,11 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
 
           {currentUser.id === cat.user_id ? (
             <div>
-              <button className="allButtons" onClick={handleDeleteClick}>
+              <button id="singleCatPageButton" onClick={handleDeleteClick}>
                 Remove Cat
               </button>
 
-              <button className="allButtons" onClick={handleModalClick}>
+              <button id="singleCatPageButton" onClick={handleModalClick}>
                 Edit Cat
               </button>
               <EditCatModal
