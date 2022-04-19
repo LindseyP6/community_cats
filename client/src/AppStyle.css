@@ -176,11 +176,12 @@ h1, .linksBack {text-align: center}
   padding: 15px;
   margin-bottom: 25px;
   justify-content: center;
+  margin-left: 10%;
 }
 
 .singleCatImg {
-  width: 500px;
-  height: 450px;
+  width: 520px;
+  height: 470px;
   padding-left: 30%;
 }
 

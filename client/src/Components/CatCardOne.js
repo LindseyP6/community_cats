@@ -16,17 +16,19 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
       }, [id])
 
 
-  function handleDeleteFromDatabase(){
+  function handleDeleteClick(){
     fetch(`/cats/${id}`, {
       method: "DELETE",
     })
+    handleDelete(id)
     history.push(`/home`)
+    history.go(0)
   }
 
-  function handleDeleteClick(){
-      handleDelete(id)
-      handleDeleteFromDatabase()
-  }
+  // function handleDeleteClick(){
+  //     handleDelete(id)
+  //     handleDeleteFromDatabase()
+  // }
 
   function handleModalClick(){
       setShow(true)

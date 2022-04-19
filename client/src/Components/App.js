@@ -65,10 +65,6 @@ function App() {
     setCatsArray(byebyeCat)
   }
 
-  // if (currentUser) const myCats = catsArray.filter(cat => currentUser.id === cat.user_id)
-  // const myCatsList = catsArray.filter(cat => cat.user_id === currentUser.id)
-
-  //maybe turn this back on
   if (!currentUser) return <Login setCurrentUser={setCurrentUser} />
 
   return (
@@ -115,6 +111,7 @@ function App() {
             addNewCat={addNewCat} 
             currentUser={currentUser} />
         </Route>
+
 
         <Route path="/">
           <Login 

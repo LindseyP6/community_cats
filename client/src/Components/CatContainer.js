@@ -16,12 +16,12 @@ function CatContainer({catsArray, setCatsArray, currentUser, setSearchTerm, sear
 
   return (
     <div id="allCats">
+      <h1>Meet All Of Our Cats!</h1>
       <div className="filterCats">
         <FilterCats 
           setSearchTerm={setSearchTerm} 
           searchTerm={searchTerm} 
           catCards={catCards}/>
-      <h1>Meet All Of Our Cats!</h1>
       </div>
       <div className="allCatsContainer">
         {catCards}

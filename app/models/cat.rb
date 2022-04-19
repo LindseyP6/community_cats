@@ -6,7 +6,6 @@ class Cat < ApplicationRecord
 
     validates :address, presence: true
     validates :name, presence: true
-    validates :description, presence: true
     
     def convert_address_to_coordinates
         results = Geocoder.search(self.address)

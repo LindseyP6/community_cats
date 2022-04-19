@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom';
 function UserCatsList({catsArray, currentUser}) {
 
 const myCats = catsArray.filter(cat => cat.user_id === currentUser.id)
-
-  return (
+return (
     <div>
         <h1>My Cats</h1>
         <div className="myCatsContainer">
