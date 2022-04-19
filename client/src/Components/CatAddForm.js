@@ -57,6 +57,7 @@ function CatAddForm({ addNewCat, currentUser }) {
 
       <form onSubmit={handleSubmit}>
       <h1>ADD A NEW CAT</h1>
+      <p>After adding a cat, you will be redirected to the map <br></br>where you can view your cat!</p>
       <br></br>
         <div className="catAddForm">
           <label>
@@ -178,6 +179,7 @@ function CatAddForm({ addNewCat, currentUser }) {
           <strong>Add your Cat!</strong>
         </button>
       </form>
+      <p style={{fontSize:"small"}}>Must include at least the cat's name and location (address format)</p>
     </div>
   );
 }

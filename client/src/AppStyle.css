@@ -180,8 +180,8 @@ h1, .linksBack {text-align: center}
 }
 
 .singleCatImg {
-  width: 520px;
-  height: 470px;
+  max-width: 520px;
+  max-height: 470px;
   padding-left: 30%;
 }
 
