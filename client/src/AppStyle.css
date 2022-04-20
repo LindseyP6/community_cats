@@ -147,8 +147,8 @@ h1, h2, h3, h4, label {
 .allCatsDetails li { padding: 8px;}
 
 .allCatsDetails img {
-  width: 325px;
-  height: 350px;
+  max-width: 325px;
+  max-height: 350px;
   border-radius: 20%;
 }
 
@@ -259,13 +259,14 @@ h1, .linksBack {text-align: center}
 
 .mapboxgl-popup-content{
   border-radius: 39%;
-  border: 1px solid #94d2bd;
+  /* border: 1px solid #94d2bd; */
 }
 
 .popUpContent {
   max-width: 300px;
-  max-height: 300px;
+  max-height: 350px;
   text-align: center;
+  background-color: #f2f3f5
 }
 
 /* MODAL CSS */
@@ -334,6 +335,9 @@ h1, .linksBack {text-align: center}
   margin: 0 auto;
   justify-content: left;
   margin-bottom: 15px;
+  border: 1px dashed #d1d3d8;
+  border-radius: 10%;
+  padding: 20px;
 }
 
 .addFormField1 { grid-area: 1 / 1 / 2 / 2; padding:5px;}
@@ -423,7 +427,7 @@ h1, .linksBack {text-align: center}
 
 #addCommentButton:hover {
   color: #16525b;
-  background-color: yellow;
   font-size: medium;
-  font-weight: bold
+  font-weight: bold;
+  background-color: #d1d3d8;
 }

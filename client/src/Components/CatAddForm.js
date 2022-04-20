@@ -171,6 +171,7 @@ function CatAddForm({ addNewCat, currentUser }) {
 
         </div>
 
+        <p style={{fontSize:"small"}}>Must include at least the cat's name and location (address format)</p>
         <button 
           type="submit" 
           name="submit" 
@@ -179,7 +180,6 @@ function CatAddForm({ addNewCat, currentUser }) {
           <strong>Add your Cat!</strong>
         </button>
       </form>
-      <p style={{fontSize:"small"}}>Must include at least the cat's name and location (address format)</p>
     </div>
   );
 }

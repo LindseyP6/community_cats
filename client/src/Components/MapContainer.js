@@ -75,8 +75,8 @@ function MapContainer({catsArray, mapToken, myCatsList}) {
             className="popUp"
           >
             <div className="popUpContent">
-              <h3>{selectedCat.name}</h3>
-              <p><img src={selectedCat.image} alt={selectedCat.name} width="100px"/></p>
+              <h2>{selectedCat.name}</h2>
+              <p><img src={selectedCat.image} alt={selectedCat.name} width="200px"/></p>
               <li><strong>Temperament: </strong>{selectedCat.temperament}</li>
               <li><strong>Caretaker: </strong> {selectedCat.human_name}</li>
               <li><Link to={`/cats/${selectedCat.id}`}>See Details</Link></li>
