@@ -37,7 +37,7 @@ function handleSignupModal(){
     <div id="loginPage">
       <iframe src="https://giphy.com/embed/jS6sVMK2fu4Uw" width="333" height="420" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       <div id="loginPageContainer">
-      <h1>Community Cat Catalog</h1>
+        <h1>Community Cat Catalog</h1>
       <div className="loginOrSignUp">
         <form onSubmit={handleLoginSubmit}>
           <label>Email: 

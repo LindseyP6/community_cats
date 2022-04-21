@@ -394,6 +394,11 @@ h1, .linksBack {text-align: center}
 #loginPageContainer {
   border: 1px dashed #94d2bd;
   border-radius: 8%;
+  padding: 10px;
+}
+
+iframe {
+  padding-left: 110px;
 }
 
 .loginOrSignUp {

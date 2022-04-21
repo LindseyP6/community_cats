@@ -895,6 +895,128 @@ Cat.create(
     address: "1672 86th St, Brooklyn, NY 11214"
 )
 
+Cat.create(
+    name: "JimBob",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2sLQH83DU2Uf9GrSiWG_6QmfyzbGDke_WUw&usqp=CAU",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Small calico kitten with white underneath!",
+    temperament: "Confident, loud, active,",
+    tnr_status: "Yes",
+    trap_date: "1-1-2022",
+    tnr_date: "1-2-2022",
+    special_notes: "kitten, need help asap",
+    user_id: User.all.sample.id,
+    address: "1858 78th St, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Polo",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRah_wCGurgJBI8_OYZxJs04zz4gyhz8Wkwg&usqp=CAU",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Mostly white cat with grey on head/face. Piercing blue eyes!",
+    temperament: "friendly, soft, kind",
+    tnr_status: "Yes",
+    trap_date: "2-1-2022",
+    tnr_date: "2-5-2022",
+    special_notes: "Seems to have 2/3 followers",
+    user_id: User.all.sample.id,
+    address: "7722 18th Ave, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Sal",
+    image: "https://www.goodnewsnetwork.org/wp-content/uploads/2019/01/Feral-Cat-on-Stone-Wall-Public-Domain.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "All white cat",
+    temperament: "Loner, brave, confident",
+    tnr_status: "Yes",
+    trap_date: "2-1-2022",
+    tnr_date: "2-5-2022",
+    special_notes: "Seems to have 2/3 followers",
+    user_id: User.all.sample.id,
+    address: "8008 18th Ave, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Bennie",
+    image: "https://static01.nyt.com/images/2016/05/24/nyregion/24APPRAISAL2/24APPRAISAL2-videoSixteenByNine600-v2.jpg",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Tan tabby with white chest!",
+    temperament: "defensive, shy",
+    tnr_status: "Yes",
+    trap_date: "4-1-2022",
+    tnr_date: "4-5-2022",
+    special_notes: "loner",
+    user_id: User.all.sample.id,
+    address: "1954 79th St, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Konnie",
+    image: "https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTA2NjkwNi9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY4NzI4MTIzN30.vj-QmRNytVifOFT9-wfmUORbKOgB32q3S2KiwIomMFo/img.jpg?width=980",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Mostly white cat with grey tabby spots and tabby tail",
+    temperament: "Loner, brave, confident",
+    tnr_status: "Yes",
+    trap_date: "10-1-2020",
+    tnr_date: "10-5-2020",
+    special_notes: "Will rub on caretakers often!",
+    user_id: User.all.sample.id,
+    address: "8757 15th Ave, Brooklyn, NY 11228"
+)
+Cat.create(
+    name: "Cody",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfU6PGAZUKnPGx0ZmUqW3xSGA3w3x2kkTvdw&usqp=CAU",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Dark grey cat with white spots",
+    temperament: "brave, risk-taker, sweet",
+    tnr_status: "Yes",
+    trap_date: "11-11-2020",
+    tnr_date: "11-12-2020",
+    special_notes: "Will rub on caretakers often!",
+    user_id: User.all.sample.id,
+    address: "1472 Benson Ave, Brooklyn, NY 11228"
+)
+Cat.create(
+    name: "Halie",
+    image: "https://nypost.com/wp-content/uploads/sites/2/2021/05/chicago-feral-cats-01.jpg?quality=90&strip=all&w=1024",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Grey and light orange with white undernearth and through face",
+    temperament: "calm, sweet, cautious",
+    tnr_status: "Yes",
+    trap_date: "7-19-2021",
+    tnr_date: "7-20-2021",
+    special_notes: "Will rub on caretakers often!",
+    user_id: User.all.sample.id,
+    address: "94 Bay 11th St, Brooklyn, NY 11228"
+)
+Cat.create(
+    name: "Minni",
+    image: "https://nypost.com/wp-content/uploads/sites/2/2021/05/chicago-feral-cats-01.jpg?quality=90&strip=all&w=1024",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "long haired dark grey cat with yellow eyes",
+    temperament: "caretaker, leader, friendly",
+    tnr_status: "Yes",
+    trap_date: "5-19-2021",
+    tnr_date: "5-20-2021",
+    special_notes: "Takes care of the other cats!",
+    user_id: User.all.sample.id,
+    address: "1617 77th St, Brooklyn, NY 11214"
+)
+
+
 40.times do
     Interaction.create(
     comment: "Here kitty kitty kitty kitty",
