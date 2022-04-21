@@ -3,7 +3,7 @@ User.destroy_all
 Interaction.destroy_all
 require 'faker'
 
-User.create(
+lindsey = User.create(
     name: "Lindsey", 
     email: "linds@gmail.com", 
     location: "Brooklyn, New York", 
@@ -34,6 +34,34 @@ User.create(
 User.create(
     name: "Mei", 
     email: "mei@gmail.com", 
+    location: "Brooklyn, New York", 
+    image: "", 
+    password: "123"
+)
+User.create(
+    name: "Sara", 
+    email: "sara@gmail.com", 
+    location: "Brooklyn, New York", 
+    image: "", 
+    password: "123"
+)
+User.create(
+    name: "Robyn", 
+    email: "rob@gmail.com", 
+    location: "Brooklyn, New York", 
+    image: "", 
+    password: "123"
+)
+User.create(
+    name: "Maddy", 
+    email: "maddy@gmail.com", 
+    location: "Brooklyn, New York", 
+    image: "", 
+    password: "123"
+)
+User.create(
+    name: "Jack", 
+    email: "jack@gmail.com", 
     location: "Brooklyn, New York", 
     image: "", 
     password: "123"
@@ -83,6 +111,21 @@ Cat.create(
     special_notes: "Feed by a rude man between 16th & 17th",
     user_id: User.all.sample.id,
     address: "1651 83rd Street, Brooklyn NY 11214"
+)
+Cat.create(
+    name: "Jenny",
+    image: "https://live.staticflickr.com/65535/52020160875_36593a2bb4_c.jpg",
+    gender: "female",
+    # latitude: 
+    # longitude: 
+    description: "Small grey and brown tabby cat. Stripped tail",
+    temperament: "Shy but sweet.",
+    tnr_status: "Yes",
+    trap_date: "5-2-2021",
+    tnr_date: "5-3-2021",
+    special_notes: "Maybe someone's housecat",
+    user_id: lindsey.id,
+    address: "1735 84th Street, Brooklyn, NY 11214"
 )
 Cat.create(
     name: "Ally",
@@ -233,21 +276,6 @@ Cat.create(
     special_notes: "Maybe someone's housecat",
     user_id: User.all.sample.id,
     address: "1827 84th Street, Brooklyn, NY 11214"
-)
-Cat.create(
-    name: "Jenny",
-    image: "../images/ally.jpeg",
-    gender: "female",
-    # latitude: 
-    # longitude: 
-    description: "Small grey and brown tabby cat. Stripped tail",
-    temperament: "Shy but sweet.",
-    tnr_status: "Yes",
-    trap_date: "5-2-2021",
-    tnr_date: "5-3-2021",
-    special_notes: "Maybe someone's housecat",
-    user_id: User.all.sample.id,
-    address: "1735 84th Street, Brooklyn, NY 11214"
 )
 Cat.create(
     name: "Mama Meow Meow",
@@ -899,7 +927,7 @@ end
         created_at: Faker::Date.between(from: '2021-10-15', to: '2022-04-19')
     )
 end
-12.times do
+25.times do
     Interaction.create(
         comment: "I think this cat has second dinner at feeding station!",
         user_id: User.all.sample.id,
@@ -907,7 +935,7 @@ end
         created_at: Faker::Date.between(from: '2021-10-15', to: '2022-04-19')
     )
 end
-20.times do
+40.times do
     Interaction.create(
     comment: "So cute!",
     user_id: User.all.sample.id,
@@ -925,17 +953,18 @@ end
     Interaction.create(
     comment: "This cat needs to be trapped ASAP!",
     user_id: User.all.sample.id,
-    cat_id: Cat.all.sample.id
+    cat_id: Cat.all.sample.id,
+    created_at: Faker::Date.between(from: '2021-8-15', to: '2021-09-09')
 )
 end
-10.times do
+30.times do
 Interaction.create(
     comment: "I feed this cat at least once a week!",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id
 )
 end
-5.times do
+25.times do
     Interaction.create(
     comment: "My dog and this cat always have a staredown but they seem to like each other.",
     user_id: User.all.sample.id,

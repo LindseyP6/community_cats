@@ -52,12 +52,12 @@ h1, h2, h3, h4, label {
 }
 
 #header {
-  width: 96%;
+  width: 92%;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  margin: 12px;
+  margin: 20px 0 10px 70px;
 }
 
 .siteNameHeaader {
@@ -65,6 +65,7 @@ h1, h2, h3, h4, label {
   font-weight: bold;
   font-size: 50px;
   color: #006466;
+
 }
 /* #97c9c7 */
 
@@ -101,6 +102,7 @@ h1, h2, h3, h4, label {
   border: 1px dashed #006466;
   border-radius: 10%;
   padding: 10px;
+  margin-left: 100px;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
 }
@@ -383,11 +385,13 @@ h1, .linksBack {text-align: center}
 .profileStats {
   /* float: left; */
 }
-
 #loginPage {
-  margin-top: 25vh;
+  margin-top: 5vh;
   margin-left: 40%;
   display: inline-block;
+}
+
+#loginPageContainer {
   border: 1px dashed #94d2bd;
   border-radius: 8%;
 }
@@ -436,17 +440,23 @@ h1, .linksBack {text-align: center}
   margin-left: 12%;
   justify-content: center;
   grid-column-gap: 12px;
-  grid-row-gap: 12px;
+  grid-row-gap: 35px;
 }
 
-.facts, .tnr {
+#resourcePage li { padding: 10px;}
+
+.facts, .tnr, .whySpay, .resources {
   justify-content: center;
-  width: 750px;
+  width: 770px;
   border: 1px solid #006466;
   border-radius: 10%;
   padding: 20px;
 }
 
+.resources a{
+  font-size: 20px;
+  color: #03b6b9;
+}
 #resourcePage h3 {
   text-align: center;
   text-decoration: underline;
@@ -454,7 +464,7 @@ h1, .linksBack {text-align: center}
 }
 
 #resourcePage li {
-  list-style-type: circle;
+  list-style-type: disc;
   font-size: 22px;
 }
 
