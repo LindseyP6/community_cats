@@ -3,17 +3,12 @@ import CommentAddForm from './CommentAddForm'
 
 function Comments({cat, currentUser}) {
   const [comments, setComments] = useState([])
-  const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
    fetch("/interactions")
       .then((res) => res.json())
       .then((data) => setComments(data))
   }, []);
-
-  function handleToggle() {
-    setToggle((toggle) => !toggle);
-  }
 
   const catComments = comments.map(comment => {if (comment.cat_id === cat.id) return (<div className="commentDiv"> 
     <span><p> <strong>{comment.human_name} </strong> </p>
@@ -30,9 +25,7 @@ function Comments({cat, currentUser}) {
       </div>
       <br></br>
       <br></br>
-      <button id="addCommentButton" onClick={handleToggle}>Add Comment</button> 
-      <br></br>
-      {toggle ? <CommentAddForm comments={comments} setComments={setComments} currentUser={currentUser} cat={cat}/> : null}
+      <CommentAddForm comments={comments} setComments={setComments} currentUser={currentUser} cat={cat}/>
     </div>
   )
 }

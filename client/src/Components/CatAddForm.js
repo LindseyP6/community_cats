@@ -55,11 +55,11 @@ function CatAddForm({ addNewCat, currentUser }) {
   return (
     <div className="newCatPage">
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="addCatForm">
       <h1>ADD A NEW CAT</h1>
       <p>After adding a cat, you will be redirected to the map <br></br>where you can view your cat!</p>
       <br></br>
-        <div className="catAddForm">
+        <div className="catAddDetails">
           <label>
             Name <br></br>
             <input
@@ -78,6 +78,16 @@ function CatAddForm({ addNewCat, currentUser }) {
               name="image"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+            />
+          </label>
+
+          <label>
+            Location <br></br>
+            <input
+              className="addFormField10"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             />
           </label>
 
@@ -148,16 +158,6 @@ function CatAddForm({ addNewCat, currentUser }) {
               name="special_notes"
               value={special_notes}
               onChange={(e) => setSpecial_notes(e.target.value)}
-            />
-          </label>
-
-          <label>
-            Location <br></br>
-            <input
-              className="addFormField10"
-              name="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
             />
           </label>
 

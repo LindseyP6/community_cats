@@ -1,8 +1,6 @@
 * {
   /* text-align: center; */
-  /* font-family: 'Quattrocento Sans', sans-serif; */
-  /* font-family: 'Six Caps', sans-serif; */
-  /* font-family: 'Space Mono', monospace, 'Helvetica Neue'; */
+  font-family: 'Quattrocento Sans', sans-serif;
 
   /* font-size: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; */
 }
@@ -14,14 +12,16 @@
 li {
   list-style-type: none;
   padding: 2px;
-}
-
-p {
   font-size: 18px;
 }
 
+p {
+  font-size: 20px;
+}
+
 h1, h2, h3, h4, label {
-  color: #16525b;
+  color: #02999c;
+  font-weight: bold;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -31,6 +31,7 @@ h1, h2, h3, h4, label {
   padding: 10px;
   color: #006466;
   background-color: #ecedf2;
+  font-size: 16px;
 }
 
 .allButtons:hover {
@@ -56,24 +57,23 @@ h1, h2, h3, h4, label {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  /* row-gap: 500px; */
   margin: 12px;
 }
 
 .siteNameHeaader {
-  /* font-style: 'Montserrat'; */
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
   font-size: 50px;
-  color: #1f7a8c;
+  color: #006466;
 }
+/* #97c9c7 */
 
 .navLinks {
-  font-size: 15px;
   font-family: 'Roboto Mono', monospace;
 }
 
 .navLinkActive, .userNavLinks {
+  font-size: 16px;
   text-decoration: none;
   color: #006466;
   font-family: 'Roboto Mono', monospace;
@@ -127,7 +127,6 @@ h1, h2, h3, h4, label {
 }
 
 .allCatsContainer {
-  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
   grid-column-gap: 12px;
@@ -148,16 +147,26 @@ h1, h2, h3, h4, label {
 
 .allCatsDetails img {
   max-width: 325px;
-  max-height: 350px;
+  max-height: 375px;
   border-radius: 20%;
 }
 
 .filterSearch {
-  margin-left: 10%;
-  width: 50%;
+  /* margin-left: 10%; */
+  width: 60%;
+  margin: 0 auto;
   max-width: 700px;
+  margin-bottom: 50px;
 }
 
+.filterSearch label {
+  font-size:  22px;
+}
+
+.filterSearch input {
+  width: 220px;
+  height: 25px;
+}
 /* 
 SINGLE CAT CSS  */
 .singleCatPage {
@@ -180,8 +189,8 @@ h1, .linksBack {text-align: center}
 }
 
 .singleCatImg {
-  max-width: 520px;
-  max-height: 470px;
+  max-width: 620px;
+  max-height: 540px;
   padding-left: 30%;
 }
 
@@ -224,7 +233,7 @@ h1, .linksBack {text-align: center}
   width: 15vw;
   justify-content: center;
   padding-left: 10%;
-  padding-top: 70%;
+  padding-top: 10%;
 }
 
 #map {
@@ -264,9 +273,8 @@ h1, .linksBack {text-align: center}
 
 .popUpContent {
   max-width: 300px;
-  max-height: 350px;
+  max-height: 400px;
   text-align: center;
-  background-color: #f2f3f5
 }
 
 /* MODAL CSS */
@@ -324,8 +332,13 @@ h1, .linksBack {text-align: center}
 .newCatPage { 
   text-align: center;
 }
-
-.catAddForm {
+.addCatForm {
+    border: 6px dashed #d1d3d8;
+    display: inline-block;
+    border-radius: 10%;
+    padding: 50px;
+}
+.catAddDetails {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -335,8 +348,6 @@ h1, .linksBack {text-align: center}
   margin: 0 auto;
   justify-content: left;
   margin-bottom: 15px;
-  border: 1px dashed #d1d3d8;
-  border-radius: 10%;
   padding: 20px;
 }
 
@@ -355,11 +366,6 @@ h1, .linksBack {text-align: center}
   display: none;
 }
 
-#commentContainer {
-  text-align: center;
-  margin: 10px;
-}
-
 .profileStats {
   padding-left: 30%;
   padding-bottom: 100px;
@@ -370,12 +376,11 @@ h1, .linksBack {text-align: center}
 }
 
 #loginPage {
+  margin-top: 25vh;
+  margin-left: 40%;
   display: inline-block;
   border: 1px dashed #94d2bd;
   border-radius: 8%;
-  margin-left: 0 auto;
-  margin-top: 10%;
-  margin-left: 20%;
 }
 
 .loginOrSignUp {
@@ -383,27 +388,33 @@ h1, .linksBack {text-align: center}
 }
 
 .signInToggle { 
-  margin-left: 11%;
+  margin-left: 17%;
+  padding-bottom: 20px;
+}
+
+#commentContainer {
+  text-align: center;
+  margin: 10px;
 }
 
 .comments {
   display: inline-block;
-  max-width: 750px;
+  width: 850px;
   /* border: 1px solid #94d2bd; */
   border-radius: 10%;
   padding: 20px;
-  background-color: #d1d3d8;
+  background-color: #dbdde2;
 }
 
 .commentDiv {
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed #006466;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .commentForm {
-  border: 1px solid #94d2bd;
+  border: 1px solid #006466;
   border-radius: 10%;
   padding: 40px;
   margin-top: 20px;  
@@ -415,19 +426,35 @@ h1, .linksBack {text-align: center}
   height: 120px;
 }
 
-#addCommentButton {
-  background-color: #94d2bd;
-  color: #16525b;
-  border-radius: 10%;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
+#resourcePage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 12%;
+  justify-content: center;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
 }
 
-#addCommentButton:hover {
-  color: #16525b;
-  font-size: medium;
-  font-weight: bold;
-  background-color: #d1d3d8;
+.facts, .tnr {
+  justify-content: center;
+  width: 750px;
+  border: 1px solid #006466;
+  border-radius: 10%;
+  padding: 20px;
+}
+
+#resourcePage h3 {
+  text-align: center;
+  text-decoration: underline;
+  color: #006466;
+}
+
+#resourcePage li {
+  list-style-type: circle;
+  font-size: 22px;
+}
+
+a {
+  font-size: small;
+  color: #006466;
 }

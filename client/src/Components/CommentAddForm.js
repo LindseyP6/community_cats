@@ -28,19 +28,16 @@ function CommentAddForm({ comments, setComments, currentUser, cat }) {
     <div className="commentForm">
       <form onSubmit={handleSubmit}>
         <h3>Add A Comment About This Cat</h3>
-        <label>
-          Comment <br></br>
-          <textarea placeholder="Comment"             
+          <textarea placeholder="Leave a comment here!"             
             value={comment}
             className="commentForm"
             rows="4"
             onChange={(e) => setComment(e.target.value)} />
-        </label>
         <br></br>
         <button 
           type="submit" 
           className="allButtons">
-          <strong>Add It!</strong>
+          <strong>Add It</strong>
         </button>
       </form>
     </div>

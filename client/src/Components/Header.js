@@ -23,25 +23,21 @@ function Header({setCurrentUser, currentUser}) {
         <button>
           <NavLink exact to="/home" className="navLinkActive"> Cat-Map </NavLink>  
         </button>
-{/* 
-        <button>
-          <NavLink exact to="/cats" className="navLinkActive">All Cats</NavLink>
-        </button> */}
 
         <button>
-          <NavLink exact to="/new" className="navLinkActive">Add Cats!</NavLink>
+          <NavLink exact to="/new" className="navLinkActive">Add A Cat</NavLink>
         </button>
 
-        {/* <Link to={`/login`}>
-          <button>Login</button>
-        </Link>   */}
+        <button>
+          <NavLink exact to="/resources" className="navLinkActive">Resources</NavLink>
+        </button>
       </div>
 
       <div className='siteNameHeaader'>Community Cat Catalog</div>
       <div className="helloUser">
         {currentUser ? <p>Hello {currentUser.name}</p> : null}
         <button>
-          <NavLink exact to="/user-profile" className="userNavLinks"> My Profile </NavLink>  
+          <NavLink exact to="/user-profile" className="userNavLinks">Profile</NavLink>  
         </button>
         {/* <br></br> */}
         <button className="userNavLinks" onClick={logout}>Logout</button>

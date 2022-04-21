@@ -4,7 +4,7 @@ function FilterCats({setSearchTerm, searchTerm,}) {
 
   return (
     <div className="filterSearch">
-      <p>Search cats by their name, their human's name, TNR or Trap Date, address, temperment or description qualities. (Psst...searching will change the map!)</p>
+      <p>Scroll down to see each cat! <br/>Also, search cats by their name, their human's name, TNR or Trap Date, address, temperment or description qualities. (Psst...searching will change the map!)</p>
       <label htmlFor="search"><strong>Search Cats </strong></label>
       <input
         type="text"

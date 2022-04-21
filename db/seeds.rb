@@ -86,7 +86,7 @@ Cat.create(
 )
 Cat.create(
     name: "Ally",
-    image: "https://live.staticflickr.com/65535/52015479946_86b650563c_c.jpg",
+    image: "https://live.staticflickr.com/65535/52015730439_94284e7ef0.jpg",
     gender: "female",
     # latitude: 
     # longitude: 
@@ -161,12 +161,12 @@ Cat.create(
 )
 Cat.create(
     name: "Sylvester",
-    image: "https://live.staticflickr.com/65535/52015479801_4d546be9cd_c.jpg",
+    image: "https://live.staticflickr.com/65535/52018235566_be5f92f6f7_c.jpg",
     gender: "male",
     # latitude: 
     # longitude: 
-    description: "Black and white body. Yellow eyes. Nose is white and face is black.",
-    temperament: "Aggressive, not happy to be trapped.",
+    description: "Large tuxedo cat with white spot on face and black nose. All paws white! Bright green eyes.",
+    temperament: "semi-aggressive, not happy to be trapped.",
     tnr_status: "Yes",
     trap_date: "1-22-2021",
     tnr_date: "1-23-2021",
@@ -478,22 +478,22 @@ Cat.create(
 )
 Cat.create(
     name: "Frankie",
-    image: "https://live.staticflickr.com/65535/52015528108_dea0ef983e_c.jpg",
-    gender: "female",
+    image: "https://live.staticflickr.com/65535/52015479801_4d546be9cd_c.jpg",
+    gender: "male",
     # latitude: 
     # longitude: 
-    description: "All Black cat, small, kind of short tail",
+    description: "Medium sized tuxedo cat with white patch on nose, chest and paws",
     temperament: "Loud, confident",
     tnr_status: "Yes",
     trap_date: "1-4-2022",
     tnr_date: "1-5-2022",
-    special_notes: "Lets everyone pet her, known by the entire block",
+    special_notes: "Lets everyone pet them, known by the entire block",
     user_id: User.all.sample.id,
     address: "1703 81st St, Brooklyn, NY 11214"
 )
 Cat.create(
     name: "Shadow",
-    image: "https://live.staticflickr.com/65535/52015528108_dea0ef983e_c.jpg",
+    image: "https://live.staticflickr.com/65535/52014451612_6234df3ba4_c.jpg",
     gender: "male",
     # latitude: 
     # longitude: 
@@ -594,7 +594,7 @@ Cat.create(
     tnr_date: "11-23-2021",
     special_notes: "Wobbles when it walks, may have CH",
     user_id: User.all.sample.id,
-    address: "1644 84th Ave, Brooklyn, NY 11214"
+    address: "31 Bay 10th St #1, Brooklyn, NY 11228"
 )
 Cat.create(
     name: "Scary",
@@ -703,11 +703,11 @@ Cat.create(
 )
 Cat.create(
     name: "June",
-    image: "https://live.staticflickr.com/65535/52016150384_00f006d57f_b.jpg",
+    image: "https://live.staticflickr.com/65535/52018748220_8119a2e839_c.jpg",
     gender: "female",
     # latitude: 
     # longitude: 
-    description: "Grey and white tabby, large",
+    description: "Grey and white tabby, large. green eyes.",
     temperament: "Friendly, curious, affectionate",
     tnr_status: "Yes",
     trap_date: "6-6-2021",
@@ -748,7 +748,7 @@ Cat.create(
 )
 Cat.create(
     name: "Tara",
-    image: "https://live.staticflickr.com/65535/52016201379_2ea6d2b007_w.jpg",
+    image: "https://live.staticflickr.com/65535/52015996973_ebef2fb7eb_n.jpg",
     gender: "female",
     # latitude: 
     # longitude: 
@@ -776,7 +776,105 @@ Cat.create(
     user_id: User.all.sample.id,
     address: "1740 84th St, Brooklyn, NY 11214"
 )
+Cat.create(
+    name: "Ted",
+    image: "https://live.staticflickr.com/65535/52016215619_fcd042025c_m.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Brown tabby cat with some orange undertones, distanct front legs",
+    temperament: "Very friendly, brave",
+    tnr_status: "Yes",
+    trap_date: "3-17-2022",
+    tnr_date: "3-18-2022",
+    special_notes: "Loves the strain stations and cars",
+    user_id: User.all.sample.id,
+    address: "1532-34 86th St, Brooklyn, NY 11228"
+)
+Cat.create(
+    name: "Ryder",
+    image: "https://live.staticflickr.com/65535/52018747395_128e30234f_w.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Tuxedo cat with white face and black nose. Very rough looking",
+    temperament: "Shy, skiddish, a little mean",
+    tnr_status: "Yes",
+    trap_date: "3-07-2022",
+    tnr_date: "3-08-2022",
+    special_notes: "Healthy but treated for worms",
+    user_id: User.all.sample.id,
+    address: "1702 78th St, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Gin",
+    image: "https://live.staticflickr.com/65535/52018747395_128e30234f_w.jpg",
+    gender: "unknown",
+    # latitude: 
+    # longitude: 
+    description: "All black with medium length fur. A little stodgy in the butt area",
+    temperament: "Friendly, rubs on everything, sweet",
+    tnr_status: "No",
+    trap_date: "N/A",
+    tnr_date: "N/A",
+    special_notes: "Maybe pregnant",
+    user_id: User.all.sample.id,
+    address: "1602 85th St, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Mason",
+    image: "https://live.staticflickr.com/65535/52018226701_55dc987302_c.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Brownish grey tabby cat with white chest, light eyes. Always has it's mouth opened",
+    temperament: "Skiddish, elusive",
+    tnr_status: "Yes",
+    trap_date: "12-1-2021",
+    tnr_date: "12-5-2021",
+    special_notes: "Constnatly has its' mouth open but is healthy",
+    user_id: User.all.sample.id,
+    address: "1740 84th St, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "Shane",
+    image: "https://live.staticflickr.com/65535/52018277913_ff6922a9c5_c.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Slender tuxedo cat with one white paw",
+    temperament: "Brave, sleepy, lazy",
+    tnr_status: "Yes",
+    trap_date: "2-1-2022",
+    tnr_date: "2-5-2022",
+    special_notes: "Sleeps a lot",
+    user_id: User.all.sample.id,
+    address: "8628 16th Ave, Brooklyn, NY 11214"
+)
+Cat.create(
+    name: "KooKoo",
+    image: "https://live.staticflickr.com/65535/52017582697_a6b14c99d6_m.jpg",
+    gender: "male",
+    # latitude: 
+    # longitude: 
+    description: "Mostly white cat with grey on head/face. Piercing blue eyes!",
+    temperament: "Loner, brave, confident",
+    tnr_status: "Yes",
+    trap_date: "2-1-2022",
+    tnr_date: "2-5-2022",
+    special_notes: "Seems to have 2/3 followers",
+    user_id: User.all.sample.id,
+    address: "1672 86th St, Brooklyn, NY 11214"
+)
 
+40.times do
+    Interaction.create(
+    comment: "Here kitty kitty kitty kitty",
+    user_id: User.all.sample.id,
+    cat_id: Cat.all.sample.id,
+    created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
+)
+end
 20.times do
 Interaction.create(
     comment: "What a cute cat!",
@@ -785,16 +883,28 @@ Interaction.create(
     created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
 )
 end
-Interaction.create(
+20.times do
+    Interaction.create(
+        comment: "Such a friendly cat.",
+        user_id: User.all.sample.id,
+        cat_id: Cat.all.sample.id,
+        created_at: Faker::Date.between(from: '2021-10-15', to: '2022-04-19')
+    )
+end
+10.times do
+    Interaction.create(
     comment: "So cute!",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id
 )
-Interaction.create(
-    comment: "Such a cute cat!",
-    user_id: User.all.sample.id,
-    cat_id: Cat.all.sample.id
-)
+end
+5.times do
+    Interaction.create(
+        comment: "This cat is very standof-ish at times",
+        user_id: User.all.sample.id,
+        cat_id: Cat.all.sample.id
+    )
+end
 5.times do 
     Interaction.create(
     comment: "This cat needs to be trapped ASAP!",
@@ -802,29 +912,37 @@ Interaction.create(
     cat_id: Cat.all.sample.id
 )
 end
+10.times do
 Interaction.create(
     comment: "I feed this cat at least once a week!",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id
 )
-Interaction.create(
+end
+5.times do
+    Interaction.create(
     comment: "My dog and this cat always have a staredown but they seem to like each other.",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id,
     created_at: Faker::Date.between(from: '2021-10-03', to: '2021-12-19')
 )
-Interaction.create(
-    comment: "I really love this cat. She follows me around the neighborhood after I fed her. She meows and rolls around on the ground.",
+end
+10.times do
+    Interaction.create(
+    comment: "I really love this cat. They always follow me around when we see each other.",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id,
     created_at: Faker::Date.between(from: '2021-10-03', to: '2021-12-19')
 )
+end
+10.times do
 Interaction.create(
-    comment: "This cat has babies nearby.",
+    comment: "I think this cat has babies nearby.",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id,
     created_at: Faker::Date.between(from: '2021-10-03', to: '2021-12-19')
 )
+end
 5.times do
     Interaction.create(
     comment: "I saw this cat on 86th Street last night.",
@@ -833,7 +951,7 @@ Interaction.create(
     created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
     )
 end
-10.times do
+20.times do
     Interaction.create(
     comment: "I see this cat all of the time!",
     user_id: User.all.sample.id,

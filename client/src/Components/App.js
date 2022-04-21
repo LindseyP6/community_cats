@@ -4,15 +4,14 @@ import { NavHashLink } from 'react-router-hash-link';
 import '../AppStyle.css';
 import Header from './Header';
 import Login from './Login';
-import Signup from './Signup';
+import Resources  from "./Resources";
 import MapContainer from './MapContainer';
 import CatContainer from './CatContainer';
-
 import CatCardOne from './CatCardOne';
 import CatAddForm from './CatAddForm';
 import UserProfile from './UserProfile';
 import UserCatsList from "./UserCatsList";
-import FilterCats from './FilterCats';
+
 
 
 function App() {
@@ -112,6 +111,9 @@ function App() {
             currentUser={currentUser} />
         </Route>
 
+        <Route path="/resources">
+          <Resources />
+        </Route>
 
         <Route path="/">
           <Login 
