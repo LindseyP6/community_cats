@@ -209,7 +209,7 @@ h1, .linksBack {text-align: center}
 /* MY CATS PAGE CSS */
 .myCatsContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(3, 1fr); 
   /* grid-template-rows: repeat(, 1fr); */
   grid-column-gap: 5px;
   grid-row-gap: 5px;
@@ -347,7 +347,7 @@ h1, .linksBack {text-align: center}
     border: 6px dashed #d1d3d8;
     display: inline-block;
     border-radius: 10%;
-    padding: 50px;
+    padding: 5px 40px 5px 40px;
 }
 .catAddDetails {
   display: grid;
@@ -358,8 +358,6 @@ h1, .linksBack {text-align: center}
   width: 400px;
   margin: 0 auto;
   justify-content: left;
-  margin-bottom: 15px;
-  padding: 20px;
 }
 
 .addFormField1 { grid-area: 1 / 1 / 2 / 2; padding:5px;}
@@ -373,6 +371,12 @@ h1, .linksBack {text-align: center}
 .addFormField9 { grid-area: 4 / 2 / 5 / 3; padding:5px;}
 .addFormField10 { grid-area: 5 / 2 / 6 / 3; padding:5px;}
 
+.addCatForm img { 
+  padding-top: 10px;
+  height: 170px; 
+  width: 320px;
+  border-radius: 20%;
+}
 .hiddenUserField {
   display: none;
 }

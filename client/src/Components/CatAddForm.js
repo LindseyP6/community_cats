@@ -179,6 +179,8 @@ function CatAddForm({ addNewCat, currentUser }) {
           className="allButtons">
           <strong>Add your Cat!</strong>
         </button>
+        <br></br>
+        <img src="https://external-preview.redd.it/9GDAQHRbLXJ00QeWybcL5uXnG0Ks5XLCXZsdEjcWxno.jpg?auto=webp&s=3adccb893836c3e5528de5ad1fc1381cfa0045f7" alt="cat peeking"/>
       </form>
     </div>
   );
