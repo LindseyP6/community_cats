@@ -178,12 +178,13 @@ h1, .linksBack {text-align: center}
 
 #singleCatCard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
+  margin-top: 50px;
   justify-content: center;
   margin-left: 10%;
 }
@@ -191,11 +192,11 @@ h1, .linksBack {text-align: center}
 .singleCatImg {
   max-width: 620px;
   max-height: 540px;
-  padding-left: 30%;
+  padding-left: 40%;
 }
 
 .singleCatDetails {
-  margin-left: 25%;
+  margin-right: 95%;
   /* position: relative; */
   text-align: left;
   justify-content: left;
@@ -289,7 +290,7 @@ h1, .linksBack {text-align: center}
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 700px;
+  width: 660px;
   height: 700px;
   /* display: inline-block; */
   border-radius: 20px;
@@ -326,8 +327,16 @@ h1, .linksBack {text-align: center}
 
 .catUpdateForm input, .signupForm input{
   margin: 10px;
+  width: 200px;
+  height: 20px;
+}
+.catUpdateForm {
+  text-align: right;
 }
 
+.catUpdateForm button {
+  text-align: center;
+}
 /* FORMS */
 .newCatPage { 
   text-align: center;
@@ -416,14 +425,9 @@ h1, .linksBack {text-align: center}
 .commentForm {
   border: 1px solid #006466;
   border-radius: 10%;
-  padding: 40px;
+  padding: 50px;
   margin-top: 20px;  
   display: inline-block;
-}
-
-.commentForm input{
-  width: 400px;
-  height: 120px;
 }
 
 #resourcePage {

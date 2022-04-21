@@ -49,10 +49,11 @@ function CatCardOne({handleCatUpdate, handleDelete, currentUser}) {
         :null}
       </div>
 
-      <h1>{name}</h1>
+      {/* <h1>{name}</h1> */}
       <div id="singleCatCard">
         <img className="singleCatImg" src={image} alt={name} />
         <div className="singleCatDetails">
+        <h1 style={{textAlign: "left"}}>{name}</h1>
           <p>
             <strong>Gender: </strong>
             {gender}

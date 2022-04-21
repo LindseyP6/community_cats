@@ -32,6 +32,7 @@ function CommentAddForm({ comments, setComments, currentUser, cat }) {
             value={comment}
             className="commentForm"
             rows="4"
+            style={{fontSize: "20px"}}
             onChange={(e) => setComment(e.target.value)} />
         <br></br>
         <button 

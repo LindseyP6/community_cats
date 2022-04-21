@@ -274,9 +274,9 @@ Cat.create(
     # longitude: 
     description: "Small and young tabby cat with white jaw. More grey than brown",
     temperament: "Very very shy but takes risks ",
-    tnr_status: "No",
-    trap_date: "N/A",
-    tnr_date: "N/A",
+    tnr_status: "Yes",
+    trap_date: "3-13-2022",
+    tnr_date: "3-15-2022",
     special_notes: "Has kittens but can't find them. Feeding kitten food",
     user_id: User.all.sample.id,
     address: "8123 16th Ave, Brooklyn, NY 11214"
@@ -395,8 +395,8 @@ Cat.create(
     description: "BEAUTIFUL light grey with some stripes, small",
     temperament: "Elusive, shy, fast",
     tnr_status: "No",
-    trap_date: "N/A",
-    tnr_date: "N/A",
+    trap_date: "9-4-2020",
+    tnr_date: "9-5-2020",
     special_notes: "Seen only 2 times over months",
     user_id: User.all.sample.id,
     address: "8101 15th Ave, Brooklyn, NY 11228"
@@ -424,9 +424,9 @@ Cat.create(
     # longitude: 
     description: "6 week old kitten found with sibling, fluffy brown tabby with green eyes",
     temperament: "Adorable, sweet but shy.",
-    tnr_status: "No",
+    tnr_status: "Yes",
     trap_date: "11-3-2021",
-    tnr_date: "N/A",
+    tnr_date: "1-4-2021",
     special_notes: "Will be adopted!",
     user_id: User.all.sample.id,
     address: "8661 16th Ave, Brooklyn, NY 11214"
@@ -439,9 +439,9 @@ Cat.create(
     # longitude: 
     description: "6 week old kitten found with sibling, fluffy 'russian blue'",
     temperament: "very scared, hissing non-stop.",
-    tnr_status: "No",
+    tnr_status: "Yes",
     trap_date: "11-3-2021",
-    tnr_date: "N/A",
+    tnr_date: "11-4-2021",
     special_notes: "Will be adopted!",
     user_id: User.all.sample.id,
     address: "8663 16th Ave, Brooklyn, NY 11214"
@@ -814,9 +814,9 @@ Cat.create(
     # longitude: 
     description: "All black with medium length fur. A little stodgy in the butt area",
     temperament: "Friendly, rubs on everything, sweet",
-    tnr_status: "No",
-    trap_date: "N/A",
-    tnr_date: "N/A",
+    tnr_status: "Yes",
+    trap_date: "9-30-3021",
+    tnr_date: "10-1-2021",
     special_notes: "Maybe pregnant",
     user_id: User.all.sample.id,
     address: "1602 85th St, Brooklyn, NY 11214"
@@ -875,7 +875,15 @@ Cat.create(
     created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
 )
 end
-20.times do
+40.times do
+    Interaction.create(
+    comment: "Meow meow meow ",
+    user_id: User.all.sample.id,
+    cat_id: Cat.all.sample.id,
+    created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
+)
+end
+30.times do
 Interaction.create(
     comment: "What a cute cat!",
     user_id: User.all.sample.id,
@@ -883,7 +891,7 @@ Interaction.create(
     created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
 )
 end
-20.times do
+30.times do
     Interaction.create(
         comment: "Such a friendly cat.",
         user_id: User.all.sample.id,
@@ -891,21 +899,29 @@ end
         created_at: Faker::Date.between(from: '2021-10-15', to: '2022-04-19')
     )
 end
-10.times do
+12.times do
+    Interaction.create(
+        comment: "I think this cat has second dinner at feeding station!",
+        user_id: User.all.sample.id,
+        cat_id: Cat.all.sample.id,
+        created_at: Faker::Date.between(from: '2021-10-15', to: '2022-04-19')
+    )
+end
+20.times do
     Interaction.create(
     comment: "So cute!",
     user_id: User.all.sample.id,
     cat_id: Cat.all.sample.id
 )
 end
-5.times do
+15.times do
     Interaction.create(
         comment: "This cat is very standof-ish at times",
         user_id: User.all.sample.id,
         cat_id: Cat.all.sample.id
     )
 end
-5.times do 
+15.times do 
     Interaction.create(
     comment: "This cat needs to be trapped ASAP!",
     user_id: User.all.sample.id,
@@ -975,7 +991,7 @@ end
     created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
 )
 end
-10.times do
+20.times do
     Interaction.create(
         comment: Faker::Hipster.sentence(word_count: 4),
         user_id: User.all.sample.id,
@@ -983,7 +999,7 @@ end
         created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
     )
 end
-5.times do
+35.times do
     Interaction.create(
         comment: Faker::Quote.robin,
         user_id: User.all.sample.id,
@@ -991,7 +1007,7 @@ end
         created_at: Faker::Date.between(from: '2021-12-03', to: '2022-04-19')
     )
 end
-10.times do
+40.times do
     Interaction.create(
         comment: Faker::Adjective.positive,
         user_id: User.all.sample.id,
