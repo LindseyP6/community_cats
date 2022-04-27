@@ -12,38 +12,38 @@ class User < ApplicationRecord
     end 
 
     def first_tnr_date
-        self.cats.pluck(:tnr_date).min
-    end
-
-    def first_tnr_cat
-        dates = self.cats.sort_by {|date | date[:tnr_date] }.first
-        dates.name
-    end
-
-    def last_tnr_date
         self.cats.pluck(:tnr_date).max
     end
 
-    def last_tnr_cat
+    def first_tnr_cat
         dates = self.cats.sort_by {|date | date[:tnr_date] }.last
         dates.name
     end
 
+    def last_tnr_date
+        self.cats.pluck(:tnr_date).min
+    end
+
+    def last_tnr_cat
+        dates = self.cats.sort_by {|date | date[:tnr_date] }.first
+        dates.name
+    end
+
     def first_trap_date
-        self.cats.pluck(:trap_date).min
+        self.cats.pluck(:trap_date).max
     end
 
     def first_trapped_cat
-        dates = self.cats.sort_by {|date | date[:trap_date] }.first
+        dates = self.cats.sort_by {|date | date[:trap_date] }.last
         dates.name
     end
 
     def last_trap_date
-        self.cats.pluck(:trap_date).max
+        self.cats.pluck(:trap_date).min
     end
 
     def last_trapped_cat
-        dates = self.cats.sort_by {|date | date[:trap_date] }.last
+        dates = self.cats.sort_by {|date | date[:trap_date] }.first
         dates.name
     end
 

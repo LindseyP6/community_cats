@@ -21,10 +21,10 @@ function UserProfile({currentUser}) {
         <p><strong>Name:</strong> {name}</p>
         <p><strong>Location:</strong> {location}</p>
         <p><strong>Total Cats:</strong> {how_many_cats}</p>
-        <p><strong>First Cat Trapped:</strong> {first_trapped_cat} {first_trap_date}</p>
-        <p><strong>First Cat TNRed:</strong> {first_tnr_cat} {first_tnr_date}</p>
-        <p><strong>Most Recently TNRed:</strong> {last_tnr_cat} {last_tnr_date}</p>
-        <p><strong>Most Recently Trapped:</strong> {last_trapped_cat} {last_trap_date}</p>
+        <p><strong>First Cat Trapped:</strong> {first_trapped_cat} on  {first_trap_date}</p>
+        {/* <p><strong>First Cat TNRed:</strong> {first_tnr_cat} {first_tnr_date}</p> */}
+        {/* <p><strong>Most Recently TNRed:</strong> {last_tnr_cat} {last_tnr_date}</p> */}
+        <p><strong>Most Recently Trapped:</strong> {last_trapped_cat} on {last_trap_date}</p>
       </div>
     </div>
   )

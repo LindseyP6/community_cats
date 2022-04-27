@@ -192,7 +192,7 @@ h1, .linksBack {text-align: center}
 }
 
 .singleCatImg {
-  max-width: 620px;
+  max-width: 580px;
   max-height: 540px;
   padding-left: 40%;
 }
@@ -391,7 +391,7 @@ h1, .linksBack {text-align: center}
 }
 #loginPage {
   margin-top: 5vh;
-  margin-left: 40%;
+  margin-left: 38%;
   display: inline-block;
 }
 
@@ -446,7 +446,7 @@ iframe {
 #resourcePage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-left: 12%;
+  margin-left: 5%;
   justify-content: center;
   grid-column-gap: 12px;
   grid-row-gap: 35px;

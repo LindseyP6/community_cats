@@ -154,7 +154,7 @@ Cat.create(
     trap_date: "10-19-2020",
     tnr_date: "10-25-2020",
     special_notes: "Pregnant",
-    user_id: User.all.sample.id,
+    user_id: lindsey.id,
     address: "1634 83rd Street, Brooklyn, NY 11214"
 )
 Cat.create(
@@ -476,7 +476,7 @@ Cat.create(
 )
 Cat.create(
     name: "Queen Fifi",
-    image: "https://live.staticflickr.com/65535/52015730394_b73c043b48_c.jpg",
+    image: "https://live.staticflickr.com/65535/52015998595_bd0be49d64_z.jpg",
     gender: "male",
     # latitude: 
     # longitude: 
